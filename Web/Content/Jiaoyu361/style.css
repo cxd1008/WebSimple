@@ -1,0 +1,785 @@
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+img,
+dl,
+dt,
+dd,
+ol,
+ul,
+li {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/*导航样式*/
+
+.header {
+    width: 100%;
+    height: 100px;
+    background: #0f72c5;
+}
+
+.nav {
+    margin: 0 auto;
+    width: 1200px;
+    height: 100px;
+}
+
+.nav .logo {
+    width: 300px;
+    float: left;
+    padding-top:20px;
+}
+
+.nav .nav-con {
+    float: right;
+    width: 770px;
+    height: 100px;
+}
+/*.navLiCurrent a{
+    border-bottom: 1px solid #000; 
+}*/
+.navLiCurrent{
+    background: #5faef3;
+}
+.nav .nav-con .navLiCurrent .nav-wrap{
+    display: block;
+   
+}
+
+.nav .nav-con ul li {
+    float: left;
+    width: 105px;
+    line-height: 100px;
+    text-align: center;
+}
+
+.nav .nav-con li .Abg {
+   
+    font-family: "微软雅黑";
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #fff;
+}
+.nav .nav-con > li > a {
+    padding-bottom: 3px;
+}
+
+.nav .nav-con li .nav-wrap {
+    display: none;
+    position: relative;
+    top: 0px;
+    z-index: 100;
+    padding-top: 3px;
+    width: 105px;
+    height: 208px;
+    *height:250px;
+    background: #fff;
+}
+
+.nav .nav-con li .nav-wrap ul {
+    padding: 10px 0 0 10px;
+}
+
+.nav .nav-con li .nav-wrap ul li {
+    margin-bottom: 5px;
+    width: 85px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+}
+.nav .nav-con li .nav-wrap ul li:hover{
+    background: #edebec;
+}
+.nav .nav-con li .nav-wrap ul li a {
+    color: #444;
+    font-family:"宋体";
+    font-size: 16px;
+
+
+}
+.nav .nav-con li .nav-wrap ul li a:hover {
+    border:none;
+    
+}
+
+.nav .nav-con li .navwrap2 {
+    width: 370px;
+    height: 256px;
+}
+
+.nav .nav-con li .navwrap2 ul {
+    padding: 0;
+}
+
+.nav .nav-con li .navwrap2 .left {
+    float: left;
+    margin: 25px 0 0 25px;
+    border-right: 1px dashed #ccc;
+    width: 117px;
+    height: 224px;
+}
+
+.nav .nav-con li .navwrap2 .left ul li {
+    margin-bottom: 5px;
+    width: 85px;
+    height: 32px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.nav .nav-con li .navwrap2 .left ul .active {
+    background: #edebec;
+}
+
+.nav .nav-con li .navwrap2 .right {
+    float: left;
+    margin: 24px 0 0 20px;
+    width: 185px;
+    height: 202px;
+}
+.nav .nav-con li .navwrap2 .right dl{display: none;}
+.nav .nav-con li .navwrap2 .right dl.navwrap2-first{display: block;}
+.nav .nav-con li .navwrap2 .right dt{
+    height: 138px;
+    overflow: hidden;
+}
+.nav .nav-con li .navwrap2 .right dd {
+    width: 178px;
+    height: 72px;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: left;
+    text-indent: 2em;
+    color: #444;
+    overflow:hidden;
+
+}
+
+.nav .nav-con li .navwrap3 {
+    width: 294px;
+    min-height: 265px;
+    *min-height:295px;
+    height: auto;
+}
+
+.nav .nav-con li .navwrap3 .left {
+    float: left;
+    margin: 10px 0 0 15px;
+    width: 132px;
+}
+
+.nav .nav-con li .navwrap3 .dashed {
+    border-right: 1px dashed #ccc;
+    width: 134px;
+}
+.nav .nav-con li .navwrap3 .dashed li{
+    height: auto;
+}
+
+.nav .nav-con li .navwrap3 .left li,
+.nav .nav-con li .navwrap3 .right li {
+    width: 98px;
+    text-align: left;
+    text-indent: 10px;
+}
+
+.nav .nav-con li .navwrap3 .left li a,
+.nav .nav-con li .navwrap3 .right a {
+    font-size: 14px;
+    color: #444;
+}
+.nav .nav-con li .navwrap3 .left li:hover,
+.nav .nav-con li .navwrap3 .right li:hover{
+    background: none;
+}
+.nav .nav-con li .navwrap3 .left li a:hover,
+.nav .nav-con li .navwrap3 .right li a:hover{
+    display: block;
+    width: 98px;
+    height: 33px;
+    background: #ccc;
+}
+.nav .nav-con li .navwrap3 .left li div,
+.nav .nav-con li .navwrap3 .right li div {
+    display: none;
+    width: 95px;
+}
+.nav .nav-con li .navwrap3 .left li.navLiCurrent div,
+.nav .nav-con li .navwrap3 .right li.navLiCurrent div {
+    display: block;
+    
+}
+.nav .nav-con li .navwrap3 .left li div p,
+.nav .nav-con li .navwrap3 .right li div p {
+    width: 95px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+}
+.nav .nav-con li .navwrap3 .left li div p a:hover,
+.nav .nav-con li .navwrap3 .right li div p a:hover {
+    width:auto;
+    height:auto;
+    background: none;
+}
+.nav .nav-con li .navwrap3 .left li div p a,
+.nav .nav-con li .navwrap3 .right li div p a {
+    display: block;
+    width: 95px;
+    height: 20px;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.nav .nav-con li .navwrap3 .left span,
+.nav .nav-con li .navwrap3 .right span {
+    display: block;
+    clear: both;
+    padding: 10px 0 0 10px;
+    width: 40px;
+    height: 20px;
+    line-height: 20px;
+}
+
+.nav .nav-con li .navwrap3 .left span a,
+.nav .nav-con li .navwrap3 .right span a {
+    font-size: 12px;
+    color: #1568cc;
+}
+
+.nav .nav-con li .navwrap3 .left li div p a:hover,
+.nav .nav-con li .navwrap3 .right li div  p a:hover {
+    background: #ecebeb;
+}
+
+.nav .nav-con li .navwrap3 .left .tit,
+.nav .nav-con li .navwrap3 .right .tit {
+    border-bottom: 1px dashed #ccc;
+    width: 100px;
+    height: 26px;
+    line-height: 26px;
+    font-family: "微软雅黑";
+    font-size: 16px;
+    text-align: left;
+    text-indent: 1em;
+    color: #444;
+}
+
+.nav .nav-con li .navwrap3 .right {
+    float: left;
+    margin: 10px 0 0 25px;
+    width: 110px;
+}
+
+.nav .nav-con li .navwrap3 .right .dashed {
+    border: none;
+}
+
+
+/*主要内容*/
+
+.content {
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 1200px;
+    height: 1060px;
+}
+
+.content .top {
+    float: left;
+    width: 767px;
+    height: 1090px;
+}
+
+
+/*企业新闻*/
+
+.content .left1 {
+    float: left;
+    width: 765px;
+    height: 739px;
+}
+
+.content .left1 .news,
+.content .honor .news,
+.content .right .rightTop .news,
+.content .right .rightBottom .news {
+    width: 765px;
+    height: 43px;
+    background: #0f72c5;
+}
+
+.content .left1 .news h2,
+.content .honor .news h2,
+.content .right .rightTop .news h2,
+.content .right .rightBottom .news h2 {
+    float: left;
+    padding: 12px 0 0 26px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.content .left1 .news span,
+.content .honor .news span,
+.content .right .rightTop .news span,
+.content .right .rightBottom .news span {
+    display: block;
+    float: left;
+    padding: 13px 0 0 10px;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+.content .left1 .news p,
+.content .honor .news p,
+.content .right .rightTop .news p,
+.content .right .rightBottom .news p {
+    float: right;
+    margin: 12px 15px 0 0;
+    line-height: 18px;
+    width: 50px;
+    background: url(/imgs/more.jpg) no-repeat right center;
+}
+
+.content .left1 .news p a,
+.content .honor .news p a,
+.content .right .rightTop .news p a,
+.content .right .rightBottom .news p a {
+    font-size: 14px;
+    color: #fff;
+}
+
+.content .left1 .newsWrap {
+    margin: 0 auto;
+    margin-top: 18px;
+    border-bottom: 1px dashed #c8c8c8;
+    width: 714px;
+    height: 116px;
+}
+
+.content .left1 .border {
+    border: 1px solid #d6d6d6;
+    height: 695px;
+}
+
+.content .left1 .newNone {
+    border-bottom: none;
+}
+
+.content .left1 .newsWrap .left {
+    float: left;
+}
+
+.content .left1 .newsWrap .left a {
+    display: block;
+    border: 1px solid #cac9ce;
+    width: 155px;
+    height: 93px;
+}
+
+.content .left1 .newsWrap .right {
+    float: left;
+    margin-left: 20px;
+    width: 526px;
+    height: 93px;
+}
+
+.content .left1 .newsWrap .right h3 a {
+    font-size: 18px;
+    color: #333;
+}
+.content .left1 .newsWrap .right h3 a:hover {
+    color: #d11106;
+}
+
+.content .left1 .newsWrap .right p {
+    overflow: hidden;
+    margin-top: 7px;
+}
+
+.content .left1 .newsWrap .right p a {
+    display: block;
+    overflow: hidden;
+    height: 66px;
+    font-size: 14px;
+    line-height: 22px;
+    color: #444;
+    text-indent: 2em;
+}
+.content .left1 .newsWrap .right p a:hover{
+    color: #d11106;
+}
+
+/*公司荣誉*/
+
+.content .honor {
+    float: left;
+    margin-top: 26px;
+    width: 765px;
+    height: 318px;
+}
+
+.content .honor .border {
+    border: 1px solid #d6d6d6;
+    height: 250px;
+}
+
+.content .honor .honorWrap {
+    padding: 23px 0 0 40px;
+    width: 715px;
+    height: 236px;
+}
+
+.content .honor .honorWrap li {
+    float: left;
+    margin-right: 28px;
+    width: 210px;
+}
+.content .honor .honorWrap li span{
+    height:40px;
+    line-height:22px;
+    font-size:14px;
+    color:#444;
+    display: block;
+    overflow: hidden;
+}
+
+.content .honor .honorWrap dl {
+    float: left;
+    margin-right: 42px;
+    width: 210px;
+}
+
+.content .honor .honorWrap .nomargin {
+    margin: 0;
+}
+
+.content .honor .honorWrap dt {
+    overflow: hidden;
+    padding-bottom: 22px;
+    width: 207px;
+    height: 142px;
+}
+
+.content .honor .honorWrap dd {
+    height: 42px;
+    font-size: 14px;
+    line-height: 22px;
+    color: #444;
+    overflow: hidden;
+}
+
+.content .right {
+    float: left;
+    margin-left: 22px;
+    width: 410px;
+    height: 1088px;
+}
+
+
+
+.courseListeningVedio {
+    width: 700px;
+    height: 200px;
+    float: left;
+    padding: 23px 0 0 32px;
+}
+.netClasses {
+    height: 185px;
+    position: relative;
+    padding-top: 14px;
+    margin-left: 5px;
+    overflow: hidden;
+}
+.scroll {
+    width: auto;
+    height: 185px;
+    overflow: hidden;
+    position: absolute;
+    margin-left: 17px;
+}
+.scroll li {
+    float: left;
+    width: 190px;
+    height: 185px;
+    overflow: hidden;
+    margin-right: 42px;
+    position: relative;
+}
+.scroll li a, .scroll li a img {
+    width: 190px;
+    height: 140px;
+    display: block;
+    overflow: hidden;
+    border:none;
+}
+.scroll li span{
+    height: 40px;
+    line-height: 22px;
+    font-size: 14px;
+    color: #444;
+    display: block;
+    overflow: hidden;
+}
+
+
+/*公司介绍*/
+
+.content .right .rightTop {
+    width: 406px;
+    height: 740px;
+}
+
+.content .right .rightTop .news,
+.content .right .rightBottom .news {
+    width: 406px;
+    background: #4b4f5b;
+}
+
+.content .right .rightTop .news p,
+.content .right .rightBottom .news p {
+    background: url(/imgs/more2.jpg) no-repeat right center;
+}
+
+.content .right .rightTop .border {
+    border: 1px solid #d6d6d6;
+    width: 404px;
+    height: 540px;
+}
+
+.content .right .rightTop .video {
+    padding: 17px 0 0 24px;
+    width: 355px;
+    height: 190px;
+}
+
+.content .right .rightTop .int {
+    overflow: hidden;
+    margin: 0 auto;
+    padding-top: 22px;
+    width: 357px;
+    height: 260px;
+    font-size: 14px;
+    line-height: 22px;
+    color: #444;
+    text-indent: 2em;
+}
+
+.content .right .rightTop .int span {
+    float: right;
+}
+
+.content .right .rightTop .int span a {
+    color: #d71209;
+}
+
+
+/*旗下品牌*/
+
+.content .right .rightTop .brand {
+    margin-top: 26px;
+    border: 1px solid #d6d6d6;
+    width: 404px;
+    height: 126px;
+}
+
+.content .right .rightTop .brand .bag {
+    margin: 0 auto;
+    margin-top: 12px;
+    border-bottom: 1px dashed #c8c8c8;
+    width: 360px;
+    height: 30px;
+}
+
+.content .right .rightTop .brand h3 {
+    float: left;
+    font-size: 18px;
+    color: #444;
+}
+
+.content .right .rightTop .brand span {
+    display: block;
+    float: left;
+    padding-left: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #444;
+}
+
+.content .right .rightTop .brand ul {
+    margin: 15px 0 0 25px;
+}
+
+.content .right .rightTop .brand li {
+    float: left;
+}
+
+.content .right .rightTop .brand .line {
+    margin-right: 20px;
+    border-right: 1px solid #ccc;
+    width: 175px;
+    height: 44px;
+}
+
+
+/*各地分校*/
+
+.content .right .rightBottom {
+    margin-top: 25px;
+    width: 406px;
+    height: 320px;
+}
+
+.content .right .rightBottom .map {
+    position: relative;
+    border: 1px solid #d6d6d6;
+    width: 404px;
+    height: 250px;
+    background: url(/imgs/map.jpg) no-repeat;
+}
+.content .right .rightBottom .map a div{position:absolute;text-align: center;display: none;left: 45px;width: 100px;padding:5px;color:#444;background: #fff; }
+.content .right .rightBottom .map a div ul li{text-align: center;color:#444;}
+.content .right .rightBottom .map a{position: absolute;width: 30px;height: 15px;}
+.content .right .rightBottom .map a.beijing{left: 270px;top: 60px;}
+.content .right .rightBottom .map a.beijing div{
+    left:20px;
+    top:10px;
+}
+.content .right .rightBottom .map a.shenyang{left: 342px;top: 47px;}
+.content .right .rightBottom .map a.shenyang div{
+    left: -36px;
+    top: -50px;
+}
+.content .right .rightBottom .map a.tianjin{left: 298px;top: 82px;}
+.content .right .rightBottom .map a.tianjin div{
+    left:-20px;
+    top:-30px;
+}
+.content .right .rightBottom .map a.shijiazhuang{width: 40px;left: 245px;top: 83px;}
+.content .right .rightBottom .map a.taiyuan{left: 221px;top: 100px;}
+.content .right .rightBottom .map a.xian{left: 214px;top: 128px;}
+.content .right .rightBottom .map a.zhengzhou{left: 253px;top: 135px;}
+.content .right .rightBottom .map a.zhengzhou div{
+    left:35px;
+    top:-84px;
+}
+.content .right .rightBottom .map a.jinan{left: 298px;top: 110px;}
+.content .right .rightBottom .map a.jinan div{
+    left:-10px;
+    top:24px;
+}
+.content .right .rightBottom .map a.nanjing{left: 305px;top: 144px;}
+.content .right .rightBottom .map a.nanjing div{
+    left:-36px;
+    top:20px;
+}
+.content .right .rightBottom .map a.shanghai{left: 342px;top: 160px;}
+.content .right .rightBottom .map a.shanghai div{
+    left:-36px;
+    top:20px;
+}
+.content .right .rightBottom .map a.hangzhou{left: 332px;top: 180px;}
+.content .right .rightBottom .map a.hangzhou div{
+    left:-36px;
+    top:20px;
+}
+.content .right .rightBottom .map a.hefei{left: 286px;top: 174px;}
+.content .right .rightBottom .map a.fuzhou{left: 299px;top: 207px;}
+.content .right .rightBottom .map a.fuzhou div{
+    left:-36px;
+    top:-50px;
+}
+.content .right .rightBottom .map a.guangzhou{left: 261px;top: 235px;}
+.content .right .rightBottom .map a.guangzhou div{left: 30px;top: -20px;}
+.content .right .rightBottom .map a.changsha{left: 240px;top: 194px;}
+.content .right .rightBottom .map a.wuhang{left: 237px;top: 171px;}
+.content .right .rightBottom .map a.chengdu{left: 162px;top: 161px;}
+.content .right .rightBottom .map a.chongqing{left: 193px;top: 205px;}
+
+
+/*合作伙伴 */
+
+.friend {
+    margin: 0 auto;
+    margin-top: 26px;
+    border: 1px solid #d6d6d6;
+    width: 1200px;
+    height: 180px;
+    background: #f5f5f5;
+}
+
+.friend p {
+    padding: 28px 0 8px 16px;
+    width: 100px;
+    height: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #444;
+}
+
+.friend ul {
+    margin-left: 11px;
+}
+
+.friend li {
+    float: left;
+    margin-right: 10px;
+    height:83px;
+}
+.friend li a {
+    display: block;
+    height:83px;
+}
+
+
+/*底部*/
+
+.footer {
+    margin-top: 26px;
+    width: 100%;
+    height: 134px;
+    background: #0f72c5;
+    clear:both;
+}
+
+.footer .footWrap {
+    margin: 0 auto;
+    padding-top: 35px;
+    width: 1200px;
+    height: 80px;
+}
+
+.footer .footWrap p {
+    width: 1200px;
+    height: 30px;
+    font-size: 12px;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+}

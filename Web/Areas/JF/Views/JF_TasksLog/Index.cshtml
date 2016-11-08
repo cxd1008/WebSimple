@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Model.JF_TasksLog>
+
+@{
+    ViewBag.Title = "Index";
+}
+@*@Html.ActionLink("←Back to TasksList", "../JF_Tasks/Index", new { EMRealName = Request.QueryString["EMRealName"] })*@
+<h2>TasksLog </h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FinishStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SYSFinishStatusDDName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMCreatedByRealName)
+        </td>
+        <td>           
+            @Html.ActionLink("Details", "Details", new { id=item.TasksLogID, EMRealName= Request.QueryString["EMRealName"] })     
+        </td>
+    </tr>
+}
+</table>

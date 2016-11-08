@@ -1,0 +1,50 @@
+﻿@model Model.SYS_DD
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SYS_DD</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DDCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DDCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DDName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DDName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DDType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DDType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DDSort)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DDSort)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DDid }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

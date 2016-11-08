@@ -1,0 +1,49 @@
+﻿@model Model.JF_TasksLog
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>JF_TasksLog</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        @*<dt>
+            @Html.DisplayNameFor(model => model.TasksID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TasksID)
+        </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FinishStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SYSFinishStatusDDName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedOn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMCreatedByRealName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index", new { id= Model.TasksID, EMRealName= Request.QueryString["EMRealName"] })
+</p>

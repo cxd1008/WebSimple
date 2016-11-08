@@ -1,0 +1,38 @@
+﻿* {
+    padding: 0px;
+    margin: 0px;
+}
+
+.li {
+    width: 100px;
+    height: 500px;
+    /*border: solid 1px red;*/
+    float: left;
+    list-style-type: none;
+}
+
+.uldiv {
+    cursor: pointer;
+    text-align: center;
+    background-color: #000000;
+    opacity: 0.5;
+    width: 100px;
+    height: 500px;
+}
+
+.li:last-child {
+    width: 740px;
+}
+
+.uldiv p {
+    font-size:15px;
+    width: 15px;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-family: "微软雅黑";
+    
+    float: left;
+    color: white;
+    font-weight: 700;
+    word-wrap: break-word;
+}

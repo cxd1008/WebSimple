@@ -1,0 +1,55 @@
+﻿body {
+    /*background: url(../Img/JD/jdback0.jpg) no-repeat 0 0 ,url(../Img/JD/jdback1.jpg) no-repeat 0 420px ;*/
+    /*background-position:center;*/
+    overflow-x:hidden;
+}
+
+#divbody {
+    width: 1920px;
+    height: 840px;
+    background: url(../Img/JD/jdback0.jpg) no-repeat 0 0,url(../Img/JD/jdback1.jpg) no-repeat 0 420px;
+    margin-left: -400px;
+}
+#imgJDTop{
+    margin-top:85px;
+    margin-left:710px;
+}
+.imgJDBody{
+    position:absolute;
+}
+#d1{
+    top:344px;
+    left:-10px;
+}
+#d2{
+    top:380px;
+    left:200px;
+}
+#d3{
+    top:290px;
+    left:810px;
+}
+#d4{
+    top:250px;
+    left:1200px;
+}
+#longS{
+    top:480px;
+    left:550px;
+}
+#longT{
+    top:318px;
+    left:550px;
+    animation: donghua 2s infinite ease; 
+}
+#longFire{
+    top:363px;
+    left:910px;
+}
+
+@keyframes donghua {
+    0% {
+        transform: rotateY(0deg);
+        /*border: solid 1px #ff0000;*/
+    }
+}

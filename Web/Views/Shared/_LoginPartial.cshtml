@@ -1,0 +1,28 @@
+﻿@using Microsoft.AspNet.Identity
+@using Model
+@if (Session["Login"] != null)
+{
+
+
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken();
+
+                                //EM_Employee myEM_Employee = Common.SessionClass.GetSession.EMUserName;
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li>
+                                        @Html.ActionLink("你好 " + Common.SessionClass.GetSession.EMRealName + "!", "", "EM/EM_Employee/Edit/" + Common.SessionClass.GetSession.EmID, routeValues: null, htmlAttributes: new { title = "管理" })
+                                    </li>
+                                    <li><a href="javascript:document.getElementById('logoutForm').submit()">注销</a></li>
+                                </ul>
+
+    }
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+
+        <li>@Html.ActionLink("注册", "Create", "EM/EM_Employee/Create")</li>
+        <li>@Html.ActionLink("登录", "Login", "Account")</li>
+    </ul>
+}

@@ -1,0 +1,349 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="WebMvcModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="EM_Employee">
+          <Key>
+            <PropertyRef Name="EmID" />
+          </Key>
+          <Property Name="EmID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="EMUserName" Type="varchar" MaxLength="50" />
+          <Property Name="EMPassWord" Type="varchar" MaxLength="50" />
+          <Property Name="EMRealName" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmType" Type="varchar" MaxLength="50" />
+          <Property Name="Mobile" Type="varchar" MaxLength="50" />
+          <Property Name="IsDisabled" Type="bit" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="JF_Tasks">
+          <Key>
+            <PropertyRef Name="TasksID" />
+          </Key>
+          <Property Name="TasksID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TaskNeeds" Type="nvarchar" MaxLength="500" />
+          <Property Name="ExecutorScore" Type="float" />
+          <Property Name="TechnicalFactor" Type="float" />
+          <Property Name="TimeFactor" Type="float" />
+          <Property Name="DemandDetailFactor" Type="float" />
+          <Property Name="TestEvaluteFactor" Type="float" />
+          <Property Name="NeedsEvaluteFactor" Type="float" />
+          <Property Name="ExecutorGetScore" Type="float" />
+          <Property Name="Executor" Type="uniqueidentifier" />
+          <Property Name="TestFactor" Type="float" />
+          <Property Name="OnlinePublishFactor" Type="float" />
+          <Property Name="TestScore" Type="float" />
+          <Property Name="TestEmployee" Type="uniqueidentifier" />
+          <Property Name="DemandFactor" Type="float" />
+          <Property Name="DemandScore" Type="float" />
+          <Property Name="DemandEmployee" Type="uniqueidentifier" />
+          <Property Name="FinishStatus" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="JF_TasksLog">
+          <Key>
+            <PropertyRef Name="TasksLogID" />
+          </Key>
+          <Property Name="TasksLogID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TasksID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FinishStatus" Type="nchar" MaxLength="10" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="News">
+          <Key>
+            <PropertyRef Name="NewsID" />
+          </Key>
+          <Property Name="NewsID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="NewsColumnID" Type="uniqueidentifier" />
+          <Property Name="NewsTitle" Type="nvarchar" MaxLength="200" />
+          <Property Name="NewsContent" Type="text" />
+          <Property Name="NewsAuthor" Type="nvarchar" MaxLength="50" />
+          <Property Name="OrderByNum" Type="float" />
+          <Property Name="CreateTime" Type="datetime" />
+          <Property Name="CreateBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsDeleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="NewsColumn">
+          <Key>
+            <PropertyRef Name="ColumnID" />
+          </Key>
+          <Property Name="ColumnID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ColumnPID" Type="uniqueidentifier" />
+          <Property Name="ColumnName" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreateTime" Type="datetime" />
+          <Property Name="CreateBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsDeleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="SYS_DD">
+          <Key>
+            <PropertyRef Name="DDid" />
+          </Key>
+          <Property Name="DDid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DDCode" Type="varchar" MaxLength="50" />
+          <Property Name="DDName" Type="nvarchar" MaxLength="50" />
+          <Property Name="DDType" Type="varchar" MaxLength="50" />
+          <Property Name="DDSort" Type="float" />
+        </EntityType>
+        <Association Name="FK_News_NewsColumn1">
+          <End Role="NewsColumn" Type="Self.NewsColumn" Multiplicity="0..1" />
+          <End Role="News" Type="Self.News" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NewsColumn">
+              <PropertyRef Name="ColumnID" />
+            </Principal>
+            <Dependent Role="News">
+              <PropertyRef Name="NewsColumnID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="WebMvcModelStoreContainer">
+          <EntitySet Name="EM_Employee" EntityType="Self.EM_Employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JF_Tasks" EntityType="Self.JF_Tasks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JF_TasksLog" EntityType="Self.JF_TasksLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="News" EntityType="Self.News" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NewsColumn" EntityType="Self.NewsColumn" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SYS_DD" EntityType="Self.SYS_DD" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_News_NewsColumn1" Association="Self.FK_News_NewsColumn1">
+            <End Role="NewsColumn" EntitySet="NewsColumn" />
+            <End Role="News" EntitySet="News" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="WebMvcModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="WebMvcEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="EM_Employee" EntityType="WebMvcModel.EM_Employee" />
+          <EntitySet Name="JF_Tasks" EntityType="WebMvcModel.JF_Tasks" />
+          <EntitySet Name="JF_TasksLog" EntityType="WebMvcModel.JF_TasksLog" />
+          <EntitySet Name="News" EntityType="WebMvcModel.News" />
+          <EntitySet Name="NewsColumn" EntityType="WebMvcModel.NewsColumn" />
+          <EntitySet Name="SYS_DD" EntityType="WebMvcModel.SYS_DD" />
+          <AssociationSet Name="FK_News_NewsColumn1" Association="WebMvcModel.FK_News_NewsColumn1">
+            <End Role="NewsColumn" EntitySet="NewsColumn" />
+            <End Role="News" EntitySet="News" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="EM_Employee">
+          <Key>
+            <PropertyRef Name="EmID" />
+          </Key>
+          <Property Name="EmID" Type="Guid" Nullable="false" />
+          <Property Name="EMUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EMPassWord" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EMRealName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsDisabled" Type="Boolean" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="Guid" />
+        </EntityType>
+        <EntityType Name="JF_Tasks">
+          <Key>
+            <PropertyRef Name="TasksID" />
+          </Key>
+          <Property Name="TasksID" Type="Guid" Nullable="false" />
+          <Property Name="TaskNeeds" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ExecutorScore" Type="Double" />
+          <Property Name="TechnicalFactor" Type="Double" />
+          <Property Name="TimeFactor" Type="Double" />
+          <Property Name="DemandDetailFactor" Type="Double" />
+          <Property Name="TestEvaluteFactor" Type="Double" />
+          <Property Name="NeedsEvaluteFactor" Type="Double" />
+          <Property Name="ExecutorGetScore" Type="Double" />
+          <Property Name="Executor" Type="Guid" />
+          <Property Name="TestFactor" Type="Double" />
+          <Property Name="OnlinePublishFactor" Type="Double" />
+          <Property Name="TestScore" Type="Double" />
+          <Property Name="TestEmployee" Type="Guid" />
+          <Property Name="DemandFactor" Type="Double" />
+          <Property Name="DemandScore" Type="Double" />
+          <Property Name="DemandEmployee" Type="Guid" />
+          <Property Name="FinishStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="Guid" />
+        </EntityType>
+        <EntityType Name="JF_TasksLog">
+          <Key>
+            <PropertyRef Name="TasksLogID" />
+          </Key>
+          <Property Name="TasksLogID" Type="Guid" Nullable="false" />
+          <Property Name="TasksID" Type="Guid" Nullable="false" />
+          <Property Name="FinishStatus" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="Guid" />
+        </EntityType>
+        <EntityType Name="News">
+          <Key>
+            <PropertyRef Name="NewsID" />
+          </Key>
+          <Property Name="NewsID" Type="Guid" Nullable="false" />
+          <Property Name="NewsColumnID" Type="Guid" />
+          <Property Name="NewsTitle" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="NewsContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="NewsAuthor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OrderByNum" Type="Double" />
+          <Property Name="CreateTime" Type="DateTime" Precision="3" />
+          <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <NavigationProperty Name="NewsColumn" Relationship="WebMvcModel.FK_News_NewsColumn1" FromRole="News" ToRole="NewsColumn" />
+        </EntityType>
+        <EntityType Name="NewsColumn">
+          <Key>
+            <PropertyRef Name="ColumnID" />
+          </Key>
+          <Property Name="ColumnID" Type="Guid" Nullable="false" />
+          <Property Name="ColumnPID" Type="Guid" />
+          <Property Name="ColumnName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreateTime" Type="DateTime" Precision="3" />
+          <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <NavigationProperty Name="News" Relationship="WebMvcModel.FK_News_NewsColumn1" FromRole="NewsColumn" ToRole="News" />
+        </EntityType>
+        <EntityType Name="SYS_DD">
+          <Key>
+            <PropertyRef Name="DDid" />
+          </Key>
+          <Property Name="DDid" Type="Guid" Nullable="false" />
+          <Property Name="DDCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DDName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DDType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DDSort" Type="Double" />
+        </EntityType>
+        <Association Name="FK_News_NewsColumn1">
+          <End Type="WebMvcModel.NewsColumn" Role="NewsColumn" Multiplicity="0..1" />
+          <End Type="WebMvcModel.News" Role="News" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NewsColumn">
+              <PropertyRef Name="ColumnID" />
+            </Principal>
+            <Dependent Role="News">
+              <PropertyRef Name="NewsColumnID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="WebMvcModelStoreContainer" CdmEntityContainer="WebMvcEntities">
+          <EntitySetMapping Name="EM_Employee">
+            <EntityTypeMapping TypeName="WebMvcModel.EM_Employee">
+              <MappingFragment StoreEntitySet="EM_Employee">
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="IsDisabled" ColumnName="IsDisabled" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="EmType" ColumnName="EmType" />
+                <ScalarProperty Name="EMRealName" ColumnName="EMRealName" />
+                <ScalarProperty Name="EMPassWord" ColumnName="EMPassWord" />
+                <ScalarProperty Name="EMUserName" ColumnName="EMUserName" />
+                <ScalarProperty Name="EmID" ColumnName="EmID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JF_Tasks">
+            <EntityTypeMapping TypeName="WebMvcModel.JF_Tasks">
+              <MappingFragment StoreEntitySet="JF_Tasks">
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="FinishStatus" ColumnName="FinishStatus" />
+                <ScalarProperty Name="DemandEmployee" ColumnName="DemandEmployee" />
+                <ScalarProperty Name="DemandScore" ColumnName="DemandScore" />
+                <ScalarProperty Name="DemandFactor" ColumnName="DemandFactor" />
+                <ScalarProperty Name="TestEmployee" ColumnName="TestEmployee" />
+                <ScalarProperty Name="TestScore" ColumnName="TestScore" />
+                <ScalarProperty Name="OnlinePublishFactor" ColumnName="OnlinePublishFactor" />
+                <ScalarProperty Name="TestFactor" ColumnName="TestFactor" />
+                <ScalarProperty Name="Executor" ColumnName="Executor" />
+                <ScalarProperty Name="ExecutorGetScore" ColumnName="ExecutorGetScore" />
+                <ScalarProperty Name="NeedsEvaluteFactor" ColumnName="NeedsEvaluteFactor" />
+                <ScalarProperty Name="TestEvaluteFactor" ColumnName="TestEvaluteFactor" />
+                <ScalarProperty Name="DemandDetailFactor" ColumnName="DemandDetailFactor" />
+                <ScalarProperty Name="TimeFactor" ColumnName="TimeFactor" />
+                <ScalarProperty Name="TechnicalFactor" ColumnName="TechnicalFactor" />
+                <ScalarProperty Name="ExecutorScore" ColumnName="ExecutorScore" />
+                <ScalarProperty Name="TaskNeeds" ColumnName="TaskNeeds" />
+                <ScalarProperty Name="TasksID" ColumnName="TasksID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JF_TasksLog">
+            <EntityTypeMapping TypeName="WebMvcModel.JF_TasksLog">
+              <MappingFragment StoreEntitySet="JF_TasksLog">
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="FinishStatus" ColumnName="FinishStatus" />
+                <ScalarProperty Name="TasksID" ColumnName="TasksID" />
+                <ScalarProperty Name="TasksLogID" ColumnName="TasksLogID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="News">
+            <EntityTypeMapping TypeName="WebMvcModel.News">
+              <MappingFragment StoreEntitySet="News">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="OrderByNum" ColumnName="OrderByNum" />
+                <ScalarProperty Name="NewsAuthor" ColumnName="NewsAuthor" />
+                <ScalarProperty Name="NewsContent" ColumnName="NewsContent" />
+                <ScalarProperty Name="NewsTitle" ColumnName="NewsTitle" />
+                <ScalarProperty Name="NewsColumnID" ColumnName="NewsColumnID" />
+                <ScalarProperty Name="NewsID" ColumnName="NewsID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NewsColumn">
+            <EntityTypeMapping TypeName="WebMvcModel.NewsColumn">
+              <MappingFragment StoreEntitySet="NewsColumn">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="ColumnName" ColumnName="ColumnName" />
+                <ScalarProperty Name="ColumnPID" ColumnName="ColumnPID" />
+                <ScalarProperty Name="ColumnID" ColumnName="ColumnID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SYS_DD">
+            <EntityTypeMapping TypeName="WebMvcModel.SYS_DD">
+              <MappingFragment StoreEntitySet="SYS_DD">
+                <ScalarProperty Name="DDSort" ColumnName="DDSort" />
+                <ScalarProperty Name="DDType" ColumnName="DDType" />
+                <ScalarProperty Name="DDName" ColumnName="DDName" />
+                <ScalarProperty Name="DDCode" ColumnName="DDCode" />
+                <ScalarProperty Name="DDid" ColumnName="DDid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

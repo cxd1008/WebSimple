@@ -1,0 +1,245 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <link href="~/Areas/CssJquery/CSS/WebDemo.css" rel="stylesheet" />
+</head>
+<body>
+    @*****************最头*************************@
+    <a id="a1"></a>
+    <div id="head1">
+        <div id="head1-1">
+            <div id="head1-1-1">
+                <img src="~/Areas/CssJquery/Img/WebDemo/logo.jpg" />
+            </div>
+            <div id="head1-1-2">
+                <div class="head1-1-2menu">
+                    <div>首页</div>
+                    <div class="head1-1-2menu2"></div>
+                </div>
+                <div class="head1-1-2menu" accesskey="1">
+                    <div>菜单1</div>
+                    <div class="head1-1-2menu2">菜单11</div>
+                </div>
+                <div class="head1-1-2menu" accesskey="2">
+                    <div>菜单2</div>
+                    <div class="head1-1-2menu2">菜单22</div>
+                </div>
+                <div class="head1-1-2menu" accesskey="3">
+                    <div>菜单3</div>
+                    <div class="head1-1-2menu2">菜单33</div>
+                </div>
+                <div class="head1-1-2menu" accesskey="4">
+                    <div>菜单4</div>
+                    <div class="head1-1-2menu2">菜单44</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*****************轮播图***********************@
+    <div id="lunbo">
+        <div id="lunboDivL" class="lunboDivLR" onclick="lunboDivL()">></div>
+        <div id="lunboDivR" class="lunboDivLR" onclick="lunboDivR()"><</div>
+        <img class="lunboImg" src="~/Areas/CssJquery/Img/WebDemo/1.jpg" />
+        <img class="lunboImg" style="display:none" src="~/Areas/CssJquery/Img/WebDemo/2.jpg" />
+        <img class="lunboImg" style="display:none" src="~/Areas/CssJquery/Img/WebDemo/3.jpg" />
+        <img class="lunboImg" style="display:none" src="~/Areas/CssJquery/Img/WebDemo/4.jpg" />
+        <img class="lunboImg" style="display:none" src="~/Areas/CssJquery/Img/WebDemo/5.jpg" />
+        <img class="lunboImg" style="display:none" src="~/Areas/CssJquery/Img/WebDemo/6.jpg" />
+        <img class="lunboImg" style="display:none" src="~/Areas/CssJquery/Img/WebDemo/7.jpg" />
+        <img class="lunboImg" style="display:none" src="~/Areas/CssJquery/Img/WebDemo/8.jpg" />
+        <img class="lunboImg" style="display:none" src="~/Areas/CssJquery/Img/WebDemo/9.jpg" />
+        <img class="lunboImg" style="display:none" src="~/Areas/CssJquery/Img/WebDemo/10.jpg" />
+        <div id="lunboNum">
+            <div style="background-color:orange">1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+        </div>
+    </div>
+    @*****************中间*************************@
+    <div id="bodymiddle">
+        <div id="bodymiddle1">
+            <div class="title1">
+                <p>企业新闻 News</p>
+            </div>
+            <ul>
+                <li>
+                    <div class="uldiv">
+                        <div class="divli">
+                            <img src="~/Areas/CssJquery/Img/WebDemo/1.jpg" />
+                        </div>
+                        <div class="divli2">
+                            <a class="p1" href="http://www.baidu.com" target="_blank">一级建造师总裁班四地全面开班</a>
+                            <p>2016年8月6日，我校一级建造师总裁班在北京、上海、郑州、南京四大培训基地全面开班，来自全国各地的一建总裁班学员分别在指定地点参加了此次集训。北京一级建造师总裁班学员签到现场总裁班开班现场，学员们在优</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="uldiv">
+                        <div class="divli">
+                            <img src="~/Areas/CssJquery/Img/WebDemo/2.jpg" />
+                        </div>
+                        <div class="divli2">
+                            <a class="p1" href="javascript:;">一级建造师总裁班四地全面开班</a>
+                            <p>2016年8月6日，我校一级建造师总裁班在北京、上海、郑州、南京四大培训基地全面开班，来自全国各地的一建总裁班学员分别在指定地点参加了此次集训。北京一级建造师总裁班学员签到现场总裁班开班现场，学员们在优</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="uldiv">
+                        <div class="divli">
+                            <img src="~/Areas/CssJquery/Img/WebDemo/3.jpg" />
+                        </div>
+                        <div class="divli2">
+                            <a class="p1" href="javascript:;">一级建造师总裁班四地全面开班</a>
+                            <p>2016年8月6日，我校一级建造师总裁班在北京、上海、郑州、南京四大培训基地全面开班，来自全国各地的一建总裁班别在指定地点参加了此次集训。北京一级建造师总裁班学员签到现场总裁班开班现场，学员们在优</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="uldiv">
+                        <div class="divli">
+                            <img src="~/Areas/CssJquery/Img/WebDemo/4.jpg" />
+                        </div>
+                        <div class="divli2">
+                            <a class="p1" href="javascript:;">一级建造师总裁班四地全面开班</a>
+                            <p>2016年8月6日，我校一级建造师总裁班在北京、上海、郑州、南京四大培训基地全面开班，来自全国各地的一建总裁班别在指定地点参加了此次集训。北京一级建造师总裁班学员签到现场总裁班开班现场，学员们在优</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="uldiv">
+                        <div class="divli">
+                            <img src="~/Areas/CssJquery/Img/WebDemo/5.jpg" />
+                        </div>
+                        <div class="divli2">
+                            <a class="p1" href="javascript:;">一级建造师总裁班四地全面开班</a>
+                            <p>2016年8月6日，我校一级建造师总裁班在北京、上海、郑州、南京四大培训基地全面开班，来自全国各地的一建总裁班别在指定地点参加了此次集训。北京一级建造师总裁班学员签到现场总裁班开班现场，学员们在优</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="bodymiddle2">
+            <div id="bodymiddle2-1">
+                <div class="title2">
+                    <p>公司介绍Company</p>
+                </div>
+                <div id="bodymiddle2-1body">
+                    <video controls="controls" autoplay="autoplay" src="">
+                        您的浏览器不支持 video 标签。
+                    </video>
+                </div>
+            </div>
+            <div id="bodymiddle2-2">
+                <div class="title2"><p>特色 Feature</p> </div>
+                <div id="bodymiddle2-2body">
+                    <p>《 一次就好 》 歌手：沈腾 专辑：《夏洛特烦恼 电影原声》 </p>
+                    <audio controls="controls" style="width:400px;height:45px;">
+                        <source src="~/Areas/CssJquery/Img/WebDemo/一次就好.ogg" type="audio/ogg">
+                        <source src="~/Areas/CssJquery/Img/WebDemo/一次就好.mp3" type="audio/mpeg">
+                        你的浏览器不支持html5的audio标签
+                    </audio>
+                </div>
+            </div>
+        </div>
+        <div id="bodymiddle3">
+            <div class="title1"><p>企业动态 Active</p></div>
+            <div class="bodymiddle3-1">
+                <div class="bodymiddle3F">
+                    <img src="~/Areas/CssJquery/Img/WebDemo/6.jpg" />
+                </div>
+                <div class="bodymiddle3B">
+                    <p>
+                        第一张:妖精的尾吧
+                        妖精的尾吧II
+                    </p>
+                </div>
+            </div>
+            <div class="bodymiddle3-1">
+                <div class="bodymiddle3F">
+                    <img src="~/Areas/CssJquery/Img/WebDemo/7.jpg" />
+                </div>
+                <div class="bodymiddle3B">
+                    <p>第二张:带帽子的小女娃</p>
+                </div>
+            </div>
+            <div class="bodymiddle3-1">
+                <div class="bodymiddle3F">
+                    <img src="~/Areas/CssJquery/Img/WebDemo/8.jpg" />
+                </div>
+                <div class="bodymiddle3B">
+                    <p>第三张:海绵宝宝与派达星</p>
+                </div>
+            </div>
+        </div>
+        <div id="bodymiddle4">
+            <div class="title2"><p>品牌 Brand</p></div>
+            <div id="bodymiddle4body">
+
+            </div>
+        </div>
+        <div id="bodymiddle5">
+            <div id="bodymiddle5-1">
+                <img src="~/Areas/CssJquery/Img/WebDemo/1.jpg" />
+                <img src="~/Areas/CssJquery/Img/WebDemo/2.jpg" />
+                <img src="~/Areas/CssJquery/Img/WebDemo/3.jpg" />
+                <img src="~/Areas/CssJquery/Img/WebDemo/4.jpg">
+                <img src="~/Areas/CssJquery/Img/WebDemo/5.jpg">
+                <img src="~/Areas/CssJquery/Img/WebDemo/6.jpg" />
+                <img src="~/Areas/CssJquery/Img/WebDemo/7.jpg" />
+                <img src="~/Areas/CssJquery/Img/WebDemo/8.jpg" />
+                <img src="~/Areas/CssJquery/Img/WebDemo/9.jpg" />
+                <img src="~/Areas/CssJquery/Img/WebDemo/10.jpg" />
+                <img src="~/Areas/CssJquery/Img/1.jpg" />
+                <img src="~/Areas/CssJquery/Img/2.jpg" />
+                <img src="~/Areas/CssJquery/Img/3.jpg" />
+                <img src="~/Areas/CssJquery/Img/4.jpg" />
+                <img src="~/Areas/CssJquery/Img/5.jpg" />
+                <img src="~/Areas/CssJquery/Img/6.jpg" />
+                <img src="~/Areas/CssJquery/Img/7.jpg" />
+                <img src="~/Areas/CssJquery/Img/8.jpg" />
+                <img src="~/Areas/CssJquery/Img/9.jpg" />
+                <img src="~/Areas/CssJquery/Img/10.jpg" />
+            </div>
+            <div id="bodymiddle5BTL" class="bodymiddle5BT" onclick="bodymiddle5BTLc()"><</div>
+            <div id="bodymiddle5BTR" class="bodymiddle5BT" onclick="bodymiddle5BTRc()">></div>
+        </div>
+
+    </div>
+    @*****************底部*************************@
+    <div id="bodybottom">
+        <div style="height:20px"></div>
+        <p>地址:北京市西城区金融大街-都城隍庙后殿</p>
+        <p>北京天气的主要特点是四季分明。春季干旱，夏季炎热多雨，秋季天高气爽，冬季寒冷干燥；风向有明显的季节变化，冬季盛行西北风，夏季盛行东南风。</p>
+    </div>
+
+    @*广告窗*@
+    <div id="adLeft">
+        @*<div id="showTitle"></div>*@
+        <input id="btnLclose" type="button" value=" X " onclick="adLeftHide();" />
+        <img src="~/Areas/CssJquery/Img/WebDemo/adleft.jpg" />
+    </div>
+    <div id="btnLshow" onclick="adLeftShow();">>></div>
+    <p><abbr title="World Health Organization">WHO</abbr> 成立于 1948 年。</p>
+    <p title="World Health Organization">WHO</p>
+    <a href="#a1">锚点定位a1</a>
+    <!-- JavaScript 放置在文档最后面可以使页面加载速度更快 -->
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Areas/CssJquery/JS/WebDemo.js"></script>
+
+</body>
+</html>

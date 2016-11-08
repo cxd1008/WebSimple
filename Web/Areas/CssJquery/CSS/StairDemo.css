@@ -1,0 +1,62 @@
+﻿* {
+    margin: 0px;
+    padding: 0px;
+}
+
+#ul1 {
+    left: 80px;
+    top: 100px;
+    position: fixed;
+    list-style: none;
+}
+
+.li1 {
+    cursor: pointer;
+    line-height: 50px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-bottom: solid 2px #0094ff;
+}
+
+.lihover {
+    font-size: 20px;
+    color: #ff6a00;
+    /*background-color: #0094ff;*/
+    border-bottom: solid 3px #ff6a00;
+}
+
+.liActive {
+    font-size: 18px;
+    color: #ff6a00;
+    font-weight: 700;
+    border-bottom: solid 3px #ff6a00;
+}
+
+
+
+.divbody {
+    height: 600px;
+    border: solid 1px #00ff21;
+}
+
+.img1{
+    animation: donghua 3s ease;
+    /*animation: donghua 3s infinite ease;*/
+}
+
+
+@keyframes donghua {
+    0% {
+        /*transform: rotateY(0deg);*/
+        transform: rotateX(0deg);
+        /*transform:rotate(0deg);*/
+    }
+    100% {
+        /*transform: rotateY(360deg);*/
+        transform: rotateX(360deg);
+        /*transform:rotate(360deg);*/
+    }
+}
+
+

@@ -1,0 +1,99 @@
+﻿@using Webdiyer.WebControls.Mvc
+@model PagedList<Model.JF_TasksStats>
+@{
+    ViewBag.Title = "JF_TasksStats_Index";
+}
+<script src="@Url.Content("~/Scripts/My97DatePicker/WdatePicker.js")" type="text/javascript"></script>
+
+
+<h2>JF_TasksStats_Index</h2>
+<script>
+    function clean() {
+        var b = document.getElementById("table1").getElementsByTagName("input")
+        for (var i = 0; i < b.length; i++) {
+            if (b[i].type == "text") {
+                b[i].value = "";
+            }
+        }
+        var a = document.getElementsByTagName("select")
+        for (var i = 0; i < a.length; i++) {
+            a[i].selectedIndex = 0;
+        }
+    }
+</script>
+
+@using (Html.BeginForm())
+{
+    <table id="table1">
+        <tr>            
+            <td>人员：</td>
+            <td>@Html.DropDownList("EMRealName", "请选择")</td>
+            <td>创建时间：</td>
+            <td>@Html.TextBox("sTime", @DateTime.Now.Year + "-" + @DateTime.Now.Month + "-1", new { @style = "width:100px", @class = "Wdate", @onclick = "WdatePicker({dateFmt:'yyyy-MM-dd'})" })</td>
+            <td>-</td>
+            <td>@Html.TextBox("eTime", @DateTime.Now.ToString("yyyy-MM-dd"), new { @style = "width:100px", @class = "Wdate", @onclick = "WdatePicker({dateFmt:'yyyy-MM-dd'})" })</td>
+            <td>@Html.Hidden("h1","1")
+            <button id="submit1" type="submit">Search</button></td>
+            <td><button id="Clear" type="button" onclick="clean()">Clear</button></td>
+        </tr>
+    </table>
+}
+
+<table class="table">
+    <tr>      
+        <th>
+            人员
+        </th>
+        <th>
+            人员岗位
+        </th>
+        <th>
+            基本积分
+        </th>
+        <th>
+            最终得分
+        </th>        
+        <th>
+            金额
+        </th>       
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EMRealName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BaseScore)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GetScore)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Money)
+            </td>          
+        </tr>
+    }
+</table>
+
+<table>
+    <tr>
+        <td width="200px">
+            第 @Model.CurrentPageIndex / @Model.TotalPageCount 页 共 @Model.TotalItemCount 条记录
+        </td>
+        <td>
+            @Html.Pager(Model).Options(o => o.SetPageIndexParameterName("id").SetPagerItemTemplate("&nbsp;{0}").SetNumericPagerItemCount(5))
+        </td>
+        <td>
+            @using (Html.BeginForm("Index", "JF_TasksStats", FormMethod.Post))
+            {
+                @Html.TextBox("id", "", new { @style = "width:50px;color:red;" })
+                <input type="submit" value="go" />
+            }
+        </td>
+    </tr>
+</table>

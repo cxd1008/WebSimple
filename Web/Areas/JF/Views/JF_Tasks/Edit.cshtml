@@ -1,0 +1,125 @@
+﻿@model Model.JF_Tasks
+
+@{
+    Layout = null;
+    ViewBag.Title = "Edit";    
+    @Styles.Render("~/Content/css")
+    
+}
+<style>
+    body {
+        padding-top: 0px;        
+        padding-left: 50px;
+    }
+</style>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+<script src="~/Scripts/layer/layer.js"></script>
+<script type="text/javascript">
+    function submit1()
+    {        
+        $.post("Edit", $("#from1").serialize(), function (data) {
+            if (data == "ok") {
+                //layer.msg("登陆成功", {
+                //    icon: 1
+                //});                
+                parent.$('#submit1').click();
+                parent.layer.closeAll('iframe');               
+            }
+            else {
+                layer.msg("错误", {icon: 2});
+            }
+        });
+    }
+</script>
+<h2>编辑任务信息</h2>
+@*@using (Html.BeginForm(new { id = "form1" }))
+{*@
+    <form id="from1">
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(model => model.TasksID);
+        <table border="0">
+            <tr>
+                <td>任务需求说明：</td>
+                <td>@Html.TextArea("TaskNeeds", Model.TaskNeeds, new { @style = "min-width:500px;height:200px" })</td>
+            </tr>
+            <tr>
+                <td>研发积分：</td>
+                @{
+    if (Common.SessionClass.GetSession.EMUserName == "cxd")
+    {
+        <td>@Html.EditorFor(model => model.ExecutorScore)</td>
+    }
+    else
+    {
+        <td>@Model.ExecutorScore  @Html.HiddenFor(model => model.ExecutorScore)</td>
+                    @*<td>@Html.TextBox("ExecutorScore", Model.ExecutorScore, new { @disabled = "disabled" })</td>*@
+                    @*<td>@Html.TextBox("ExecutorScore", Model.ExecutorScore)</td>*@
+    }
+                }
+
+            </tr>
+            <tr>
+                <td>技术难度系数：</td>
+                <td>@Html.EditorFor(model => model.TechnicalFactor)</td>
+            </tr>
+            <tr>
+                <td>时间要求系数：</td>
+                <td>@Html.EditorFor(model => model.TimeFactor)</td>
+            </tr>
+            <tr>
+                <td>需求明细系数：</td>
+                <td>@Html.EditorFor(model => model.DemandDetailFactor)</td>
+            </tr>
+            <tr>
+                <td>测试评价系数：</td>
+                <td>@Html.EditorFor(model => model.TestEvaluteFactor)</td>
+            </tr>
+            <tr>
+                <td>需求评价系数：</td>
+                <td>@Html.EditorFor(model => model.NeedsEvaluteFactor)</td>
+            </tr>
+            <tr>
+                <td>执行人：</td>
+                <td>@Html.DropDownList("Executor", "--请选择--")</td>
+            </tr>
+            <tr>
+                <td>测试系数：</td>
+                <td>@Html.EditorFor(model => model.TestFactor)</td>
+            </tr>
+            <tr>
+                <td>上线发布系数：</td>
+                <td>@Html.EditorFor(model => model.OnlinePublishFactor)</td>
+            </tr>
+            <tr>
+                <td>测试人员：</td>
+                <td>@Html.DropDownList("TestEmployee", "--请选择--")</td>
+            </tr>
+            <tr>
+                <td>需求系数：</td>
+                <td>@Html.EditorFor(model => model.DemandFactor)</td>
+            </tr>
+            <tr>
+                <td>需求人员：</td>
+                <td>@Html.DropDownList("DemandEmployee", "--请选择--")</td>
+            </tr>
+            <tr>
+                <td>完成状态：</td>
+                <td>@Html.DropDownList("FinishStatus")</td>
+            </tr>
+            <tr>
+                <td>
+                    @*<input type="submit" value="Save" class="btn btn-default" />*@
+                    <input type="button" onclick="submit1()" value="Save" />
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="javascript:;" onclick="parent.layer.closeAll('iframe')">Back to List</a></td>
+            <td></td>
+        </tr>
+    </table>
+</form>
+
+
+@*}*@

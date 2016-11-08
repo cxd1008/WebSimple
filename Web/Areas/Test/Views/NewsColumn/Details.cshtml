@@ -1,0 +1,58 @@
+﻿@model Model.NewsColumn
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>NewsColumn</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ColumnPID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ColumnPID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ColumnName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ColumnName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreateTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreateBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsDeleted)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsDeleted)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ColumnID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

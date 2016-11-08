@@ -1,0 +1,515 @@
+﻿@model IEnumerable<Model.News>
+@{
+    ViewBag.Title = "Index2";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>361网站</title>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/Jiaoyu361/style.css")">
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/Jiaoyu361/slide.css")">
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/Jiaoyu361/banner.css")">
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="@Url.Content("~/Scripts/Jiaoyu361/jquery.superslide.2.1.1.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/Jiaoyu361/slide.js")" type="text/javascript"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="nav">
+            <div class="logo">
+                <a href=""><img src="~/imgs/logo.png" alt=""></a>
+            </div>
+            <div class="nav-con">
+                <ul>
+                    <li>
+                        <a href="#" class="Abg">首页</a>
+                    </li>
+                    <li>
+                        <a href="#" class="hovers Abg">关于我们</a>
+                        <div class="nav-wrap">
+                            <ul>
+                                <li class="active"><a href="#">关于我们</a></li>
+                                <li><a href="#">精英团队</a></li>
+                                <li><a href="#">企业文化</a></li>
+                                <li><a href="#">法律声明</a></li>
+                                <li><a href="#">联系我们</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" class="Abg">新闻动态</a>
+                        <div class="nav-wrap navwrap2">
+                            <div class="left">
+                                <ul>
+                                    <li class="active"><a href="#">企业新闻</a></li>
+                                    <li><a href="#">媒体关注</a></li>
+                                </ul>
+                            </div>
+                            <div class="right">
+                                <dl class="navwrap2-first">
+                                    <dt>
+                                        <img src="~/imgs/picnav.jpg" height="121" width="153" alt="">
+                                    </dt>
+                                    <dd>
+                                        优路教育（北京）二建大型公开课圆满举行优路教育（北京）二建大型公开课圆满举行优路教育教育
+                                    </dd>
+                                </dl>
+                                <dl class="navwrap2-end">
+                                    <dt>
+                                        <img src="~/imgs/picnav.jpg" height="121" width="153" alt="">
+                                    </dt>
+                                    <dd>546746764教育（北京）二建大型公开课圆满举行优路教育（北京）二建大型公开课圆满举行优路教育教育</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" class="Abg">主营业务</a>
+                        <div class="nav-wrap navwrap3">
+                            <div class="left">
+                                <p class="tit">优路教育</p>
+                                <div class="dashed">
+                                    <ul>
+                                        <li>
+                                            <a href="">建筑类</a>
+                                            <div>
+                                                <p><a href="">一级建造师</a></p>
+                                                <p><a href="">二级建造师</a></p>
+                                                <p><a href="">造价工程师</a></p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="">资格类</a>
+                                            <div>
+                                                <p><a href="">一级建造师</a></p>
+                                                <p><a href="">二级建造师</a></p>
+                                                <p><a href="">造价工程师</a></p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="">财经类</a>
+                                            <div>
+                                                <p><a href="">一级建造师</a></p>
+                                                <p><a href="">二级建造师</a></p>
+                                                <p><a href="">造价工程师</a></p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <span><a href="">更多</a></span>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <p class="tit">优路教育</p>
+                                <div class="dashed">
+                                    <ul>
+                                        <li>
+                                            <a href="">建筑类</a>
+                                            <div>
+                                                <p><a href="">一级建造师</a></p>
+                                                <p><a href="">二级建造师</a></p>
+                                                <p><a href="">造价工程师</a></p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="">资格类</a>
+                                            <div>
+                                                <p><a href="">一级建造师</a></p>
+                                                <p><a href="">二级建造师</a></p>
+                                                <p><a href="">造价工程师</a></p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="">财经类</a>
+                                            <div>
+                                                <p><a href="">一级建造师</a></p>
+                                                <p><a href="">二级建造师</a></p>
+                                                <p><a href="">造价工程师</a></p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <span><a href="">更多</a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="#" class="Abg">加入我们</a></li>
+                    <li>
+                        <a href="#" class="Abg">商城</a>
+                        <div class="nav-wrap" style="height: 160px;">
+                            <ul>
+                                <li class="active"><a href="#">优路商城</a></li>
+                                <li><a href="#">环球商城</a></li>
+                                <li><a href="#">图书商城</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" class="Abg">各地分校</a>
+                        <div class="nav-wrap" style="height: 170px;*height:210px;">
+                            <ul>
+                                <li class="active"><a href="#">华北大区</a></li>
+                                <li><a href="#">华东大区</a></li>
+                                <li><a href="#">华中大区</a></li>
+                                <li><a href="#">华南大区</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="banner">
+        <ul class="bannerWrap">
+            <li><a href="javascript:;" target="_blank"><img src="~/imgs/1.jpg" /></a></li>
+            <li><a href="javascript:;" target="_blank"><img src="~/imgs/2.jpg" /></a></li>
+            <li><a href="javascript:;" target="_blank"><img src="~/imgs/3.jpg" /></a></li>
+        </ul>
+        <a class="prev" href="javascript:void(0)"></a>
+        <a class="next" href="javascript:void(0)"></a>
+    </div>
+
+    <div class="content">
+        <div class="top">
+            <div class="left1">
+                <div class="news">
+                    <h2>企业新闻</h2>
+                    <span>NEWS</span>
+                    <p class="more"><a href="#">更多</a></p>
+                </div>
+                <div class="border">
+                    @foreach (var item in Model)
+                    {
+                        <div class="newsWrap">
+                            <div class="left">
+                                <a href="#"><img src="~/imgs/pic1.jpg" height="93" width="155" alt=""></a>
+                            </div>
+                            <div class="right">
+                                <h3><a href="">@item.NewsTitle</a></h3>
+                                <p><a href="">@item.NewsContent2</a></p>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+            </div>
+            <div class="honor">
+                <div class="news">
+                    <h2>公司荣誉</h2>
+                    <span>HONOR</span>
+                    <p class="more"><a href="#">更多</a></p>
+                </div>
+                <div class="border">
+                    <div class="courseListeningVedio">
+                        <div class="netClasses">
+                            <ul class="scroll" id="Ul1">
+                                <li ids="banner_pic_1" bg=>
+                                    <a href="http://www.niceloo.com/zhuanti/zjjjs/index.html" target="_blank">  <img src="~/imgs/honor1.jpg" alt="中级经济师班型" width="207" height="142" title="中级经济师班型" /></a>
+                                    <span>2014年环球优路教育荣获最具竞争力职业教育品牌</span>
+                                </li>
+                                <li ids="banner_pic_2" bg=>
+                                    <a href="http://www.niceloo.com/zhuanti/zjgcs/index.html" target="_blank">  <img src="~/imgs/honor1.jpg" alt="造价工程师班型" width="190" height="140" title="造价工程师班型" /></a>
+                                    <span>2014年环球优路教育荣获最具竞争力职业教育品牌</span>
+                                </li>
+                                <li ids="banner_pic_3" bg=>
+                                    <a href="http://www.niceloo.com/zhuanti/2015yjqg/" target="_blank">  <img src="~/imgs/honor1.jpg" alt="消防工程师班型" width="190" height="140" title="消防工程师班型" /></a>
+                                    <span>2014年环球优路教育荣获最具竞争力职业教育品牌</span>
+                                </li>
+                                <li ids="banner_pic_1" bg=>
+                                    <a href="http://www.niceloo.com/zhuanti/zjjjs/index.html" target="_blank">  <img src="~/imgs/honor2.jpg" alt="中级经济师班型" width="207" height="142" title="中级经济师班型" /></a>
+                                    <span>2014年环球优路教育荣获最具竞争力职业教育品牌</span>
+                                </li>
+                                <li ids="banner_pic_2" bg=>
+                                    <a href="http://www.niceloo.com/zhuanti/zjgcs/index.html" target="_blank">  <img src="~/imgs/honor2.jpg" alt="造价工程师班型" width="190" height="140" title="造价工程师班型" /></a>
+                                    <span>2014年环球优路教育荣获最具竞争力职业教育品牌</span>
+                                </li>
+                                <li ids="banner_pic_3" bg=>
+                                    <a href="http://www.niceloo.com/zhuanti/2015yjqg/" target="_blank">  <img src="~/imgs/honor2.jpg" alt="消防工程师班型" width="190" height="140" title="消防工程师班型" /></a>
+                                    <span>2014年环球优路教育荣获最具竞争力职业教育品牌</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="right">
+            <div class="rightTop">
+                <div class="news">
+                    <h2>公司介绍</h2>
+                    <span>COMPANY</span>
+                    <p class="more"><a href="#" target="_blank">更多</a></p>
+                </div>
+                <div class="border">
+                    <div class="video">
+                        <a href=""><img src="~/imgs/video.jpg" height="189" width="355" alt=""></a>
+                    </div>
+                    <p class="int">优路教育（北京）二建大型公开课圆满举行 优路教育（北京）二建大型公开课圆满举行 优路教育教育优路教育（北京）二建大型公开课圆满举行 优路教育（北京）二建大型公开课圆满举行 优路教育教育（北京）二建大型公开课圆满举行 优路教育（北京）二建大型公开课圆满举行 优（北京）二建大型公开课圆满举行 优路教育（北京）二建大型公开课圆满举行 开课圆满举行 开课圆满举行 开课圆满举行 优路教育二建大型公开课圆满举行 优路教育（北京）二建大型公开课圆满举行 开课圆满举行 开课圆满举行 开课圆满举行 优路教。。。     <span><a href="">【详细】</a></span></p>
+                </div>
+                <div class="brand">
+                    <div class="bag">
+                        <h3>旗下品牌</h3>
+                        <span>BRAND</span>
+                    </div>
+                    <ul>
+                        <li class="line">
+                            <a href="https://www.niceloo.com/" target="_blank"><img src="~/imgs/niceloo.jpg" height="46" width="154" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="https://www.geedu.com/" target="_blank"><img src="~/imgs/geedu.jpg" height="50" width="154" alt=""></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="rightBottom">
+                <div class="news">
+                    <h2>各地分校</h2>
+                    <span>SCHOOL</span>
+                    <p class="more"><a href="#">更多</a></p>
+                </div>
+                <div class="map">
+
+                    <a href="javascript:;" class="beijing">
+                        <div>北京分校</div>
+                    </a>
+
+                    <a href="javascript:;" class="shenyang">
+                        <div>
+                            <ul>
+                                <li>沈阳分校</li>
+                                <li>大连分校</li>
+                            </ul>
+                        </div>
+                    </a>
+
+                    <a href="javascript:;" class="tianjin">
+                        <div>天津分校</div>
+                    </a>
+                    <a href="javascript:;" class="shijiazhuang">
+                        <div>
+                            <ul>
+                                <li>石家庄分校</li>
+                                <li>保定分校</li>
+                                <li>唐山分校</li>
+                                <li>邯郸分校</li>
+                                <li>秦皇岛分校</li>
+                                <li>张家口分校</li>
+                            </ul>
+                        </div>
+                    </a>
+                    <a href="javascript:;" class="taiyuan">
+                        <div>太原分校</div>
+                    </a>
+                    <a href="javascript:;" class="xian">
+                        <div>
+                            <ul>
+                                <li>西安分校</li>
+                                <li>榆林分校</li>
+                            </ul>
+                        </div>
+                    </a>
+                    <a href="javascript:;" class="zhengzhou">
+                        <div>
+                            <ul>
+                                <li>郑州分校</li>
+                                <li>洛阳分校</li>
+                                <li>安阳分校</li>
+                                <li>新乡分校</li>
+                                <li>信阳分校</li>
+                                <li>平顶山分校</li>
+                                <li>商丘分校</li>
+                                <li>焦作分校</li>
+                                <li>南阳分校</li>
+                                <li>周口分校</li>
+                                <li>许昌分校</li>
+                            </ul>
+                        </div>
+                    </a>
+                    <a href="javascript:;" class="jinan">
+                        <div>
+                            <ul>
+                                <li>济南分校</li>
+                                <li>烟台分校</li>
+                                <li>青岛分校</li>
+                                <li>济宁分校</li>
+                                <li>潍坊分校</li>
+                                <li>临沂分校</li>
+                            </ul>
+                        </div>
+                    </a>
+                    <a href="javascript:;" class="nanjing">
+                        <div>
+                            <ul>
+                                <li>南京分校</li>
+                                <li>扬州分校</li>
+                                <li>南通分校</li>
+                                <li>无锡分校</li>
+                                <li>苏州分校</li>
+                            </ul>
+                        </div>
+                    </a>
+                    <a href="javascript:;" class="shanghai">
+                        <div>上海分校</div>
+                    </a>
+                    <a href="javascript:;" class="hangzhou">
+                        <div>
+                            <ul>
+                                <li>杭州分校</li>
+                                <li>宁波分校</li>
+                            </ul>
+                        </div>
+                    </a>
+                    <a href="javascript:;" class="hefei">
+                        <div>
+                            <ul>
+                                <li>合肥分校</li>
+                                <li>安庆分校</li>
+                            </ul>
+                        </div>
+                    </a>
+                    <a href="javascript:;" class="fuzhou">
+                        <div>
+                            <ul>
+                                <li>福州分校</li>
+                                <li>厦门分校</li>
+                            </ul>
+                        </div>
+                    </a>
+                    <a href="javascript:;" class="guangzhou">
+                        <div>广州分校</div>
+                    </a>
+                    <a href="javascript:;" class="changsha">
+                        <div>长沙分校</div>
+                    </a>
+                    <a href="javascript:;" class="wuhang">
+                        <div>
+                            <ul>
+                                <li>武汉分校</li>
+                                <li>宜昌分校</li>
+                            </ul>
+                        </div>
+                    </a>
+                    <a href="javascript:;" class="chengdu">
+                        <div>
+                            <ul>
+                                <li>成都分校</li>
+                                <li>绵阳分校</li>
+                            </ul>
+                        </div>
+                    </a>
+                    <a href="javascript:;" class="chongqing">
+                        <div>重庆分校</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="friend">
+        <p>合作伙伴</p>
+        <ul>
+            <li><a href="https://www.baidu.com/" target="_blank"><img src="~/imgs/01.jpg" height="80" width="188" alt=""></a></li>
+            <li><a href="http://www.ifeng.com/" target="_blank"><img src="~/imgs/02.jpg" height="80" width="188" alt=""></a></li>
+            <li><a href="http://www.cmpedu.com/" target="_blank"><img src="~/imgs/03.jpg" height="80" width="188" alt=""></a></li>
+            <li><a href="http://www.lxw361.com/" target="_blank"><img src="~/imgs/04.jpg" height="80" width="188" alt=""></a></li>
+            <li><a href="http://www.qq.com/" target="_blank"><img src="~/imgs/05.jpg" height="80" width="188" alt=""></a></li>
+            <li><a href="http://www.sina.com.cn/" target="_blank"><img src="~/imgs/06.jpg" height="80" width="188" alt=""></a></li>
+        </ul>
+    </div>
+    <div class="footer">
+        <div class="footWrap">
+            <p>总部地址：北京市海淀中关村南大街甲27号中扬大厦二层 </p>
+            <p>Copyright  2016 jiaoyu361.com 版权所有 北京环球优路教育科技股份有限公司  京ICP备05058880号 京公网安备 11010802017987号</p>
+        </div>
+    </div>
+    <script>
+
+        $(".banner").hover(function () {
+            $(this).find(".prev,.next").fadeTo("show", 0.1);
+        }, function () {
+            $(this).find(".prev,.next").hide();
+        })
+        /*鼠标移过某个按钮 高亮显示*/
+        $(".prev,.next").hover(function () {
+            $(this).fadeTo("show", 0.7);
+        }, function () {
+            $(this).fadeTo("show", 0.1);
+        })
+        $(".banner").slide({ titCell: ".num ul", mainCell: ".bannerWrap", effect: "fold", autoPlay: true, delayTime: 700, autoPage: true });
+
+
+
+        $(".nav-con li").hover(function () {
+            $(this).addClass("navLiCurrent").siblings().removeClass("navLiCurrent");
+
+        }, function () {
+            $(this).removeClass("navLiCurrent");
+
+        })
+
+
+        $('.navwrap2 ul li:first').mouseover(function () {
+            $(this).addClass('active').siblings().removeClass('active');
+            $('.navwrap2-first').css('display', 'block').siblings().css('display', 'none');
+        });
+
+        $('.navwrap2 ul li:last').mouseover(function () {
+            $(this).addClass('active').siblings().removeClass('active');
+            $('.navwrap2-end').css('display', 'block').siblings().css('display', 'none');
+        });
+
+        $('.map a').each(function () {
+            var _this = $(this);
+            $(this).mouseover(function () {
+                _this.find('div').css('display', 'block');
+            });
+            $(this).hover(function () {
+                _this.find('div').css('display', 'block');
+            }, function () {
+                _this.find('div').css('display', 'none');
+            });
+        });
+
+
+        var beginlength = $('.scroll li').length;
+        var hotaddpic = $('.scroll li').slice(0, 3).clone(true);
+        $('.scroll').append(hotaddpic);
+        var dist = $('.scroll li').css('width');
+        dist = parseInt(dist) + 40 + 3;
+        $('.scroll').width(dist * $('.scroll li').length + 'px');
+        var num = 0;
+
+        function sports() {
+            num++;
+            var distance = dist * num * -1;
+            if (num > beginlength) {
+                num = 0;
+                $('.scroll').css('left', 0).animate({ left: -232 }, 300);
+            } else {
+                $('.scroll').animate({ left: distance }, 300);
+            }
+
+        }
+        var settimer = setInterval(sports, 5000)
+
+        $('.scroll li').hover(function () {
+            $(this).children('.pictips').css('display', 'block');
+            $(this).children('.pictipsbg').css('display', 'block');
+            clearInterval(settimer);
+
+        }, function () {
+            $(this).children('.pictips').css('display', 'none');
+            $(this).children('.pictipsbg').css('display', 'none');
+            settimer = setInterval(sports, 5000);
+        })
+
+
+    </script>
+</body>
+</html>

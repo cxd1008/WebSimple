@@ -1,0 +1,74 @@
+﻿@model Model.News
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>News</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NewsColumnID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NewsColumnID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NewsTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NewsTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NewsContent)
+        </dt>
+
+        <dd>
+            @Html.Raw(Model.NewsContent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NewsAuthor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NewsAuthor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderByNum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderByNum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreateTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreateBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateBy)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.NewsID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

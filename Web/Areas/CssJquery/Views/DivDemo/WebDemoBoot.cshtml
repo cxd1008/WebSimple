@@ -1,0 +1,276 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="~/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    @*<link href="~/bootstrap/css/bootstrap.min.css" rel="stylesheet" />*@
+    <link href="~/Areas/CssJquery/CSS/WebDemoBoot.css" rel="stylesheet" />
+
+
+</head>
+<body>
+    @*navbar-inverse带有黑色背景白色文本的倒置的导航栏*@
+    @*navbar-fixed-top固定导航栏*@
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                @*屏幕响应按钮*@
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#example-navbar-collapse">
+                    <span class="sr-only">切换导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <p class="navbar-brand"><img src="~/Areas/CssJquery/Img/WebDemo/logo.jpg" style="height:60px" /></p>
+            </div>
+            <div class="collapse navbar-collapse" id="example-navbar-collapse">
+                @*navbar-right 右对齐*@
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a class="glyphicon-home" href="#">菜单a</a></li>
+                    <li><a href="#">菜单b</a></li>
+                    <li><a href="#">菜单c</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">ddddd <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Jasper Report</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">分离的链接</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">另一个分离的链接</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        @*面包屑导航（Breadcrumbs）*@
+        <ol class="breadcrumb">
+            <li><a href="#">首页</a></li>
+            <li><a href="#">菜单</a></li>
+            <li><a href="#">新闻</a></li>
+            <li class="active">第一章</li>
+        </ol>
+        <h1>我的第一个 Bootstrap 页面</h1>
+        <p>重置窗口大小，查看响应式效果！</p>
+        <div class="row">
+            <div class="col-md-12">
+                @*****************轮播图***********************@
+                <div id="lunbo">
+                    <div id="lunboDivL" class="lunboDivLR" onclick="lunboDivL()">></div>
+                    <div id="lunboDivR" class="lunboDivLR" onclick="lunboDivR()"><</div>
+                    <img class="lunboImg img-responsive" src="~/Areas/CssJquery/Img/WebDemo/1.jpg" />
+                    <img class="lunboImg img-responsive" style="display:none" src="~/Areas/CssJquery/Img/WebDemo/2.jpg" />
+                    <img class="lunboImg img-responsive" style="display:none" src="~/Areas/CssJquery/Img/WebDemo/3.jpg" />
+                    <img class="lunboImg img-responsive" style="display:none" src="~/Areas/CssJquery/Img/WebDemo/4.jpg" />
+                    <img class="lunboImg img-responsive" style="display:none" src="~/Areas/CssJquery/Img/WebDemo/5.jpg" />
+                    <img class="lunboImg img-responsive" style="display:none" src="~/Areas/CssJquery/Img/WebDemo/6.jpg" />
+                    <img class="lunboImg img-responsive" style="display:none" src="~/Areas/CssJquery/Img/WebDemo/7.jpg" />
+                    <img class="lunboImg img-responsive" style="display:none" src="~/Areas/CssJquery/Img/WebDemo/8.jpg" />
+                    <img class="lunboImg img-responsive" style="display:none" src="~/Areas/CssJquery/Img/WebDemo/9.jpg" />
+                    <img class="lunboImg img-responsive" style="display:none" src="~/Areas/CssJquery/Img/WebDemo/10.jpg" />
+                    <div id="lunboNum">
+                        <div style="background-color:orange">1</div>
+                        <div>2</div>
+                        <div>3</div>
+                        <div>4</div>
+                        <div>5</div>
+                        <div>6</div>
+                        <div>7</div>
+                        <div>8</div>
+                        <div>9</div>
+                        <div>10</div>
+                    </div>
+                </div>
+                @*****************轮播图***********************@
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-12 title1"><p>企业新闻 News</p></div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="~/Areas/CssJquery/Img/WebDemo/1.jpg" class="img-responsive" />
+                        </div>
+                        <div class="col-md-8">
+                            <a class="p1" href="http://www.baidu.com" target="_blank">一级建造师总裁班四地全面开班</a>
+                            <p>2016年8月6日，我校一级建造师总裁班在北京、上海、郑州、南京四大培训基地全面开班，来自全国各地的一建总裁班学员分别在指定地点参加了此次集训。北京一级建造师总裁班学员签到现场总裁班开班现场，学员们在优</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="~/Areas/CssJquery/Img/WebDemo/2.jpg" class="img-responsive" />
+                        </div>
+                        <div class="col-md-8">
+                            <a class="p1" href="http://www.baidu.com" target="_blank">一级建造师总裁班四地全面开班</a>
+                            <p>2016年8月6日，我校一级建造师总裁班在北京、上海、郑州、南京四大培训基地全面开班，来自全国各地的一建总裁班学员分别在指定地点参加了此次集训。北京一级建造师总裁班学员签到现场总裁班开班现场，学员们在优</p>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="~/Areas/CssJquery/Img/WebDemo/3.jpg" class="img-responsive" />
+                        </div>
+                        <div class="col-md-8">
+                            <a class="p1" href="http://www.baidu.com" target="_blank">一级建造师总裁班四地全面开班</a>
+                            <p>2016年8月6日，我校一级建造师总裁班在北京、上海、郑州、南京四大培训基地全面开班，来自全国各地的一建总裁班学员分别在指定地点参加了此次集训。北京一级建造师总裁班学员签到现场总裁班开班现场，学员们在优</p>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="~/Areas/CssJquery/Img/WebDemo/4.jpg" class="img-responsive" />
+                        </div>
+                        <div class="col-md-8">
+                            <a class="p1" href="http://www.baidu.com" target="_blank">一级建造师总裁班四地全面开班</a>
+                            <p>2016年8月6日，我校一级建造师总裁班在北京、上海、郑州、南京四大培训基地全面开班，来自全国各地的一建总裁班学员分别在指定地点参加了此次集训。北京一级建造师总裁班学员签到现场总裁班开班现场，学员们在优</p>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="~/Areas/CssJquery/Img/WebDemo/5.jpg" class="img-responsive" />
+                        </div>
+                        <div class="col-md-8">
+                            <a class="p1" href="http://www.baidu.com" target="_blank">一级建造师总裁班四地全面开班</a>
+                            <p>2016年8月6日，我校一级建造师总裁班在北京、上海、郑州、南京四大培训基地全面开班，来自全国各地的一建总裁班学员分别在指定地点参加了此次集训。北京一级建造师总裁班学员签到现场总裁班开班现场，学员们在优</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="title2">
+                    <p>公司介绍Company</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <video width="320" height="240" controls="controls">
+                            <source src="movie.ogg" type="video/ogg">
+                            <source src="movie.mp4" type="video/mp4">
+                            您的浏览器不支持HTML5视频。
+                        </video>
+                        <p>
+                            百度（Nasdaq：BIDU），全球最大的中文搜索引擎、最大的中文网站。1999年底,身在美国硅谷的李彦宏看到了中国互联网及中文搜索引擎服务的巨大发展潜力，抱着技术改变世界的梦想，他毅然辞掉硅谷的高薪工作，携搜索引擎专利技术，于 2000年1月1日在中关村创建了百度公司。
+                            “百度”二字,来自于八百年前南宋词人辛弃疾的一句词：众里寻他千百度。这句话描述了词人对理想的执着追求。
+                            百度拥有数万名研发工程师，这是中国乃至全球最为优秀的技术团队。这支队伍掌握着世界上最为先进的搜索引擎技术，使百度成为中国掌握世界尖端科学核心技术的中国高科技企业，也使中国成为美国、俄罗斯、和韩国之外，全球仅有的4个拥有搜索引擎核心技术的国家之一。
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="title2"><p>特色 Feature</p> </div>
+                        <div>
+                            <p>《 一次就好 》 歌手：沈腾 专辑：《夏洛特烦恼 电影原声》 </p>
+
+                            <audio controls="controls">
+                                <source src="~/Areas/CssJquery/Img/WebDemo/一次就好.ogg" type="audio/ogg">
+                                <source src="~/Areas/CssJquery/Img/WebDemo/一次就好.mp3" type="audio/mpeg">
+                                你的浏览器不支持html5的audio标签
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-12 title1"><p>企业动态 Active</p></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+
+                        <div class="bodymiddle3F">
+                            <img class="img-responsive" src="~/Areas/CssJquery/Img/WebDemo/6.jpg" />
+                        </div>
+                        <div class="bodymiddle3B">
+                            <p>
+                                第一张:妖精的尾吧
+                                妖精的尾吧II
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="bodymiddle3F">
+                            <img class="img-responsive" src="~/Areas/CssJquery/Img/WebDemo/7.jpg" />
+                        </div>
+                        <div class="bodymiddle3B">
+                            <p>第二张:带帽子的小女娃</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="bodymiddle3F">
+                            <img class="img-responsive" src="~/Areas/CssJquery/Img/WebDemo/8.jpg" />
+                        </div>
+                        <div class="bodymiddle3B">
+                            <p>第三张:海绵宝宝与派达星</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-md-12 title2"><p>品牌 Brand</p></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    @*<div class="row">
+            <div class="col-md-12"  style="overflow:hidden;height:150px">
+                <div id="bodymiddle5-1">
+                    <img src="~/Areas/CssJquery/Img/WebDemo/1.jpg" />
+                    <img src="~/Areas/CssJquery/Img/WebDemo/2.jpg" />
+                    <img src="~/Areas/CssJquery/Img/WebDemo/3.jpg" />
+                    <img src="~/Areas/CssJquery/Img/WebDemo/4.jpg">
+                    <img src="~/Areas/CssJquery/Img/WebDemo/5.jpg">
+                    <img src="~/Areas/CssJquery/Img/WebDemo/6.jpg" />
+                    <img src="~/Areas/CssJquery/Img/WebDemo/7.jpg" />
+                    <img src="~/Areas/CssJquery/Img/WebDemo/8.jpg" />
+                    <img src="~/Areas/CssJquery/Img/WebDemo/9.jpg" />
+                    <img src="~/Areas/CssJquery/Img/WebDemo/10.jpg" />
+                    <img src="~/Areas/CssJquery/Img/1.jpg" />
+                    <img src="~/Areas/CssJquery/Img/2.jpg" />
+                    <img src="~/Areas/CssJquery/Img/3.jpg" />
+                    <img src="~/Areas/CssJquery/Img/4.jpg" />
+                    <img src="~/Areas/CssJquery/Img/5.jpg" />
+                    <img src="~/Areas/CssJquery/Img/6.jpg" />
+                    <img src="~/Areas/CssJquery/Img/7.jpg" />
+                    <img src="~/Areas/CssJquery/Img/8.jpg" />
+                    <img src="~/Areas/CssJquery/Img/9.jpg" />
+                    <img src="~/Areas/CssJquery/Img/10.jpg" />
+                </div>
+                <div id="bodymiddle5BTL" class="bodymiddle5BT" onclick="bodymiddle5BTLc()"><</div>
+                <div id="bodymiddle5BTR" class="bodymiddle5BT" onclick="bodymiddle5BTRc()">></div>
+            </div>
+        </div>*@
+    </div>
+
+
+
+    @*****************底部*************************@
+    <div id="bodybottom">
+        <div style="height:20px"></div>
+        <p>地址:北京市西城区金融大街-都城隍庙后殿</p>
+        <p>北京天气的主要特点是四季分明。春季干旱，夏季炎热多雨，秋季天高气爽，冬季寒冷干燥；风向有明显的季节变化，冬季盛行西北风，夏季盛行东南风。</p>
+    </div>
+    <!-- JavaScript 放置在文档最后面可以使页面加载速度更快 -->
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Areas/CssJquery/JS/WebDemoBoot.js"></script>
+    <script src="~/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

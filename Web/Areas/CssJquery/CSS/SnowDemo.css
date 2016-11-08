@@ -1,0 +1,15 @@
+﻿/** {
+    padding: 0px;
+    margin: 0px;
+}*/
+
+body {
+    background-color: black;
+}
+
+.div1 {
+    color: white;
+    position: absolute;
+    font-size: 10px;
+    z-index: 99;
+}

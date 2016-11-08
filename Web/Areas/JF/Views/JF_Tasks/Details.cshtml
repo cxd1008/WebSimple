@@ -1,0 +1,178 @@
+﻿@model Model.JF_Tasks
+@{
+    Layout = null;
+    ViewBag.Title = "Details";
+    @Styles.Render("~/Content/css")
+
+}
+<style>
+    body {
+        padding-top: 0px;
+        padding-left: 50px;
+    }
+</style>
+
+<h2>Details</h2>
+<div>
+    <h4>JF_Tasks</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TaskNeeds)
+        </dt>
+
+        <dd>
+            @Html.Raw(Model.TaskNeeds)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExecutorScore)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExecutorScore)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TechnicalFactor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TechnicalFactor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeFactor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeFactor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DemandDetailFactor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DemandDetailFactor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestEvaluteFactor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestEvaluteFactor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NeedsEvaluteFactor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NeedsEvaluteFactor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExecutorGetScore)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExecutorGetScore)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Executor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMExecutorRealName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestFactor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestFactor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OnlinePublishFactor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OnlinePublishFactor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestScore)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestScore)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestEmployee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMTestEmployeeRealName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DemandFactor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DemandFactor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DemandScore)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DemandScore)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DemandEmployee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMDemandEmployeeRealName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FinishStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FinishStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedOn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMCreatedByRealName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.TasksID }) |*@
+    @*@Html.ActionLink("Back to List", "Index", new { EMRealName = Request.QueryString["EMRealName"] })*@
+    <a href="javascript:;" onclick="parent.layer.closeAll('iframe')">Back to List</a>
+</p>

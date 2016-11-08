@@ -1,0 +1,183 @@
+﻿@model Model.JF_Tasks
+
+@{
+    Layout = null;
+    ViewBag.Title = "Delete";
+    @Styles.Render("~/Content/css")
+}
+<style>
+    body {
+        padding-top: 0px;
+        padding-left: 50px;
+    }
+</style>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.form.js"></script>
+<script src="~/Scripts/layer/layer.js"></script>
+<script type="text/javascript">
+    function submit1() {
+        $.post("", $("#from1").serializeArray(), function (data) {
+            if (data == "ok") {
+                parent.$('#submit1').click();
+                parent.layer.closeAll('iframe');
+            }
+            else {
+                layer.msg("错误", { icon: 2 });
+            }
+        });
+    }
+</script>
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>JF_Tasks</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TaskNeeds)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TaskNeeds)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExecutorScore)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExecutorScore)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TechnicalFactor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TechnicalFactor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeFactor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeFactor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DemandDetailFactor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DemandDetailFactor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestEvaluteFactor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestEvaluteFactor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NeedsEvaluteFactor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NeedsEvaluteFactor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExecutorGetScore)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExecutorGetScore)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Executor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Executor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestFactor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestFactor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OnlinePublishFactor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OnlinePublishFactor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestScore)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestScore)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestEmployee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestEmployee)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DemandFactor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DemandFactor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DemandScore)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DemandScore)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DemandEmployee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DemandEmployee)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FinishStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FinishStatus)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm("JF_Tasks", "Delete", FormMethod.Post, new { id = "from1" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-actions no-color">
+            <input type="button" value="Delete" class="btn btn-default" onclick="submit1()"/>
+        </div>
+    }
+</div>

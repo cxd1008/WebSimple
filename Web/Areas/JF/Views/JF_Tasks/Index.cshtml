@@ -1,0 +1,222 @@
+﻿@using Webdiyer.WebControls.Mvc
+@model PagedList<Model.JF_Tasks>
+@{
+    ViewBag.Title = "JF_Tasks_Index";
+}
+<script src="@Url.Content("~/Scripts/My97DatePicker/WdatePicker.js")" type="text/javascript"></script>
+<script src="~/Scripts/layer/layer.js"></script>
+<h2>Tasks_Index</h2>
+<script>
+    function clean() {
+        //document.getElementById("TaskNeeds").value = "";
+        //document.getElementById("EMRealName").selectedIndex = 0;
+        //var b = document.getElementsByTagName("input")
+        var b = document.getElementById("table1").getElementsByTagName("input")
+        for (var i = 0; i < b.length; i++) {
+            if (b[i].type == "text") {
+                b[i].value = "";
+            }
+        }
+        var a = document.getElementsByTagName("select")
+        for (var i = 0; i < a.length; i++) {
+            a[i].selectedIndex = 0;
+        }
+    }
+
+    function getlistvalue(e) {
+        var obj = document.getElementById("EMRealName");
+        var value = obj.options[obj.selectedIndex].value;
+        if (value !="") {
+            var url = $(e).attr("href") + "?EMRealName=" + value;
+            $(e).attr("href", url);
+        }        
+    }
+    function IframeDetails(stitle, scontent) {
+        //alert(scontent);
+        layer.open({
+            type: 2,
+            title: stitle,
+            maxmin: true,
+            shadeClose: true, //点击遮罩关闭层
+            area: ['1000px', '700px'],//删除之后自适应
+            content: scontent
+        });
+    }
+</script>
+@using (Html.BeginForm())
+{
+    <table id="table1" cellspacing="1">
+        <tr>
+            <td>任务需求说明：</td>
+            <td>@Html.TextBox("TaskNeeds", "", new { @class = "form-control" })</td>
+            <td>人员：</td>
+            <td>@Html.DropDownList("EMRealName", ViewData["EMRealName"] as SelectList, "--请选择--", new { @class = "form-control" })</td>
+            <td>完成状态：</td>
+            <td>@Html.DropDownList("FinishStatus", ViewData["FinishStatus"] as SelectList, "--请选择--", new { @class = "form-control" })</td>
+            <td>创建时间：</td>
+            <td>@Html.TextBox("sTime", @DateTime.Now.Year + "-" + @DateTime.Now.Month + "-1", new { @style = "width:110px;height:30px", @class = "Wdate form-control", @onclick = "WdatePicker({dateFmt:'yyyy-MM-dd'})" })</td>
+            <td>-</td>
+            <td>@Html.TextBox("eTime", @DateTime.Now.ToString("yyyy-MM-dd"), new { @style = "width:110px;height:30px", @class = "Wdate form-control", @onclick = "WdatePicker({dateFmt:'yyyy-MM-dd'})" })</td>
+            <td>
+                @Html.Hidden("h1", "1")
+                <button id="submit1" type="submit" class="btn  btn-default">Search</button>
+            </td>
+            <td><button id="Clear" type="button" class="btn btn-default" onclick="clean()">Clear</button></td>
+        </tr>
+    </table>
+}
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+
+    <a id="aCreate" href="javascript:;" onclick="IframeDetails('新增积分任务', '/JF/JF_Tasks/Create')" onmouseover="    layer.tips('新增积分详细信息!', '#aCreate', { time: 10000 })" onmouseout="    layer.close(layer.tips('新增积分详细信息!', '#aCreate'))">Create New</a>
+</p>
+<table>
+    <tr>
+        <td width="200px">
+            第 @Model.CurrentPageIndex / @Model.TotalPageCount 页 共 @Model.TotalItemCount 条记录
+        </td>
+        <td>
+            @Html.Pager(Model).Options(o => o.SetPageIndexParameterName("id").SetPagerItemTemplate("&nbsp;{0}").SetNumericPagerItemCount(5))
+        </td>
+    </tr>
+</table>
+<table class="table">
+    <tr>
+        <th></th>
+        <th>
+            任务需求说明
+        </th>
+        <th>
+            基本
+        </th>
+        <th>
+            终分
+        </th>
+        <th>
+            研发
+        </th>
+        <th>
+            测试
+        </th>
+        <th>
+            测试
+        </th>
+        <th>
+            需求
+        </th>
+        <th>
+            需求
+        </th>
+        <th>
+            完成状态
+        </th>
+        <th>
+            时间
+        </th>
+        <th></th>
+    </tr>
+    @{int i = 1;}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @(i++)
+            </td>
+            <td width="450px">
+                @Html.Raw(item.TaskNeeds)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExecutorScore)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExecutorGetScore)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EMExecutorRealName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TestScore)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EMTestEmployeeRealName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DemandScore)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EMDemandEmployeeRealName)
+            </td>
+            @{
+        switch (item.FinishStatus)
+        {
+            case "01":
+                <td class="btn-danger" align="center">
+                    @Html.DisplayFor(modelItem => item.SYSFinishStatusDDName)
+                </td>
+                break;
+            case "02":
+            <td class="btn-info" align="center">
+                @Html.DisplayFor(modelItem => item.SYSFinishStatusDDName)
+            </td>
+                break;
+            case "03":
+            <td class="btn-warning" align="center">
+                @Html.DisplayFor(modelItem => item.SYSFinishStatusDDName)
+            </td>
+                break;
+            case "04":
+            <td class="btn-success" align="center">
+                @Html.DisplayFor(modelItem => item.SYSFinishStatusDDName)
+            </td>
+                break;
+            case "05":
+            <td align="center">
+                @Html.DisplayFor(modelItem => item.SYSFinishStatusDDName)
+            </td>
+                break;
+            default:
+            <td align="center">
+                @Html.DisplayFor(modelItem => item.SYSFinishStatusDDName)
+            </td>
+                break;
+        }
+            }
+            <td>
+
+                @item.CreatedOn.Value.Month/@item.CreatedOn.Value.Day
+            </td>
+            <td>
+                
+                @*@Html.ActionLink("查", "Details", new { id = item.TasksID }, new { onclick = "IframeDetails('查看','Details.cshtml')" })*@
+                @*@Html.ActionLink("改", "Edit", new { id = item.TasksID }, new { onclick = "getlistvalue(this)" })*@
+                @*@Html.ActionLink("删", "Delete", new { id = item.TasksID }, new { onclick = "getlistvalue(this)" })*@ 
+                <a href="javascript:;" onclick="IframeDetails('查看积分任务', '/JF/JF_Tasks/Details/@item.TasksID')">查</a>|
+                <a href="javascript:;" onclick="IframeDetails('编辑积分任务', '/JF/JF_Tasks/Edit/@item.TasksID')">改</a> |
+                <a href="javascript:" onclick="IframeDetails('删除积分任务', '/JF/JF_Tasks/Delete/@item.TasksID' )">删</a> |
+                <a href="javascript:" onclick="IframeDetails('任务日志', '/JF/JF_TasksLog/Index/@item.TasksID' )">志</a>
+                   @*@Html.ActionLink("志", "../JF_TasksLog/Index", new { id = item.TasksID }, new { onclick = "getlistvalue(this)" })</td>*@
+        </tr>
+    }
+
+</table>
+
+<table>
+    <tr>
+        <td width="200px">
+            第 @Model.CurrentPageIndex / @Model.TotalPageCount 页 共 @Model.TotalItemCount 条记录
+        </td>
+        <td>
+            @Html.Pager(Model).Options(o => o.SetPageIndexParameterName("id").SetPagerItemTemplate("&nbsp;{0}").SetNumericPagerItemCount(5))
+        </td>
+        <td>
+            @using (Html.BeginForm("Index", "JF_Tasks", FormMethod.Post))
+            {
+                @Html.TextBox("id", "", new { @style = "width:50px;color:red;" })
+                <input type="submit" value="go" />
+            }
+        </td>
+    </tr>
+</table>
+@*<script>
+        document.getElementById("submit1").click();
+    </script>*@

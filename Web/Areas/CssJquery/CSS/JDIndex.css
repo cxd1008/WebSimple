@@ -1,0 +1,144 @@
+﻿* {
+    padding: 0px;
+    margin: 0px;
+    font-family: "微软雅黑";
+}
+
+span {
+    margin-left: 10px;
+}
+
+#ListTop {
+    margin: 0 auto;
+    width: 1211px;
+    height: 45px;
+}
+
+#ListTopFL {
+    width: 210px;
+    height: 45px;
+    background-color: #B1191A;
+    color: white;
+    font-size: 16px;
+    line-height: 45px;
+    float: left;
+}
+
+#ListTopBody {
+    width: 900px;
+    float: left;
+}
+
+#ListTopUL {
+    margin-left: 10px;
+    line-height: 45px;
+    color: #333333;
+    list-style: none;
+}
+
+    #ListTopUL li {
+        text-align: center;
+        cursor: pointer;
+        width: 100px;
+        float: left;
+    }
+
+.ListTopUL1:hover {
+    background-color: #B1191A;
+    color: #ffffff;
+}
+
+#ListLine {
+    height: 2px;
+    background-color: #B1191A;
+}
+
+#ListBody {
+    margin: 0 auto;
+    width: 1211px;
+    height: 465px;
+}
+
+#ListBodyLeft {
+    border-bottom: solid 1px #ff0000;
+    border-left: solid 1px #ff0000;
+    float: left;
+    background-color: #C81623;
+    width: 209px;
+    height: 465px;
+}
+
+.ListBodyLeftDiv {
+    position: relative;
+    background-color: #C81623;
+    width: 209px;
+    font-size: 14px;
+    color: white;
+    height: 31px;
+    line-height: 31px;
+}
+
+    .ListBodyLeftDiv:hover {
+        background-color: #ffffff;
+        color: #B61D1D;
+    }
+
+.ListBodyLeftDivhover {
+    background-color: #ffffff;
+    color: #B61D1D;
+}
+
+
+.ListBodyLeftDivA {
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.ListBodyLeftDivAhover {
+    color: #B61D1D;
+}
+
+.ListBodyLeftDiv i {
+    font-style: normal;
+    margin-right: 5px;
+    float: right;
+}
+
+#ListTopRight {
+    width: 989px;
+    height: 464px;
+    margin-left: 10px;
+    /*background-color: #ffd800;*/
+    /*border-bottom: solid 1px #B1191A;
+    border-left: solid 1px #B1191A;
+    border-right: solid 1px #B1191A;*/
+    float: left;
+}
+
+.ListTopRight1 {
+    overflow: hidden;
+    
+    width: 990px;
+    height: 464px;
+}
+
+#listbodyRDiv {
+    overflow-y:auto;
+    overflow-x:hidden;
+    margin-left: 210px;
+    position: absolute;
+    width: 990px;
+    height: 465px;
+    
+}
+.listbodyRDivborder
+{
+    border-bottom: solid 1px #ff0000;
+    border-right: solid 1px #ff0000;
+}
+.listbodyRDiv1 {
+    display: none;
+    width: 990px;
+    height: 464px;
+}

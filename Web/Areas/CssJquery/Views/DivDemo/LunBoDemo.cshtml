@@ -1,0 +1,61 @@
+﻿@{
+    //Layout = null;
+    var vblist2 = (List<string>)ViewBag.list2;
+    var vblist3 = (List<string>)ViewData["list10"];
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+
+    <script src="~/Areas/CssJquery/JS/LunBoDemo.js"></script>
+    <link href="~/Areas/CssJquery/CSS/LunBoDemo.css" rel="stylesheet" />
+</head>
+<body>
+    @*****************轮播图***********************@
+    <div id="lunbo" style="overflow: hidden;">
+        <div id="lunboDivL" class="lunboDivLR" onclick="lunboDivL()">></div>
+        <div id="lunboDivR" class="lunboDivLR" onclick="lunboDivR()"><</div>
+        <img class="lunboImg" style="display:block;" src=@ViewBag.list />
+        <img class="lunboImg" style="display:none" src=@vblist2[0] />
+        <img class="lunboImg" style="display:none" src=@vblist2[1] />
+        <img class="lunboImg" style="display:none" src=@vblist2[2] />
+        <img class="lunboImg" style="display:none" src=@vblist2[3] />
+        <img class="lunboImg" style="display:none" src=@vblist2[4] />
+        <img class="lunboImg" style="display:none" src=@vblist2[5] />
+        <img class="lunboImg" style="display:none" src=@vblist2[6] />
+        <img class="lunboImg" style="display:none" src=@vblist2[7] />
+        <img class="lunboImg" style="display:none" src=@vblist3[0] />
+        <div id="lunboNum">
+            <div style="background-color:orange">1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+        </div>
+    </div>
+    <div>
+        <input id="btnshow" type="button" value="显示一个弹出窗口并可以拖动" onclick="showdiv();" />
+        <div id="bg"></div>
+        <div id="show">
+            <div id="showTitle">
+                <input id="btnclose" type="button" value=" X " onclick="hidediv();" />
+            </div>
+            <div>
+                <label id="la1">弹出层</label>
+                点标题拖动 弹出层
+            </div>
+
+
+        </div>
+    </div>
+</body>
+</html>

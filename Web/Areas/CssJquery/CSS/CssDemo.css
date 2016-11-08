@@ -1,0 +1,90 @@
+﻿body {
+    background-image: url(../Img/windows.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed; /*背景图片固定不跟滚动条*/
+    /*合并写法 颜色 路径 平辅 固定 左边 上边*/
+    background: #8e7bbe url(../Img/windows.jpg) no-repeat fixed 10px 20px;
+}
+
+#div1 p {
+    /*让超出的部分使用省略号*/
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+p {
+    text-decoration: line-through; /*删除线*/
+}
+
+.c1 {
+    text-transform: capitalize; /*首字母大写*/
+}
+
+.c2 {
+    text-transform: uppercase; /*全大写*/
+    letter-spacing: 5px; /*文字间距*/
+}
+
+.c3 {
+    width: 50px;
+    height: 50px;
+    border-width: 2px;
+    border-style: dashed;
+    border-radius: 10px;
+    border-color: gold;
+    /*border:dashed 2px gold;*/ /*合体写法 线型 宽 颜色*/
+    text-align: center;
+    line-height: 50px;
+}
+
+#img1 {
+    width: 200px;
+    height: 200px;
+    background-color: aliceblue;
+    background-image: url(windows.jpg);
+    background-repeat: repeat-x; /*X轴平辅*/
+    background-repeat: repeat-y; /*y轴平辅*/
+    background-repeat: no-repeat; /*不平辅*/
+}
+
+#div1 {
+    width: 100px;
+    height: 100px;
+    border: dashed 1px gold; /*合体写法 线型 宽 颜色*/
+    overflow: hidden; /*超长的部分隐藏*/
+    /*overflow: auto;*/ /*超长的部分滚动条*/
+    /*overflow:scroll;*/ /*滚动条一直存在*/
+    /*display:none;*/ /*直接隐藏*/
+    /*visibility: hidden;*/ /*占位置的隐藏*/
+    z-index: 1; /*数据越大越上*/
+}
+
+.p1 {
+    cursor: help;
+    cursor: wait;
+    cursor: pointer;
+}
+
+li {
+    list-style-type: none;
+    list-style-type: square;
+    list-style-image: url(../Img/li1.jpg);
+}
+
+
+a:link {
+    color: black;
+}
+
+a:visited {
+    color: blue;
+}
+
+a:hover {
+    color: yellow;
+}
+
+a:active {
+    color: orange;
+}

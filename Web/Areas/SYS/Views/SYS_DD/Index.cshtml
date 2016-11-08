@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Model.SYS_DD>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DDCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DDName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DDType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DDSort)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DDCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DDName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DDType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DDSort)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DDid }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DDid }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DDid })
+        </td>
+    </tr>
+}
+
+</table>

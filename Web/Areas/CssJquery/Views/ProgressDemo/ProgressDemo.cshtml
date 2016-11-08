@@ -1,0 +1,32 @@
+﻿@{
+    //Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    @Scripts.Render("~/bundles/jquery")
+    <script src="~/Areas/CssJquery/JS/ProgressDemo.js"></script>
+    @*<script src="~/Scripts/jquery-1.10.2.min.js"></script>*@
+
+</head>
+<body>
+    <div>
+        <label id="la">进度展示</label>
+        <input id="btn1" type="button" onclick="btnClick()" value="点击按钮出现提示" />
+    </div>
+
+    <div style="border:solid;height:100px;position:relative;">
+        <div id="div1" style="background-color:navajowhite; border:solid;width:50px;height:50px;  position:absolute;top:25px;">DIV</div>
+        <input id="btn1" type="button" onclick="btnMoveClick()" value="移动的DIV" />
+    </div>
+
+    <div id="div2" style="position: fixed; border: solid; width: 60px; height: 60px;">
+        <div style="text-align:right"> <input id="btn2" type="button" style="width:15px;height:15px;font-size:xx-small;padding-left:2px;line-height:1px" value="x" onclick="btnMoveHide()" /></div>
+        广告
+    </div>
+</body>
+</html>
