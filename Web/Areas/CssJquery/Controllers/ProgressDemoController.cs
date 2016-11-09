@@ -24,6 +24,10 @@ namespace Web.Areas.CssJquery.Controllers
         {
             return View();
         }
+        public ActionResult SignalRDemo()
+        {
+            return View();
+        }
 
          private static  Dictionary<Guid, int> myDictionary = new Dictionary<Guid, int>();
 
