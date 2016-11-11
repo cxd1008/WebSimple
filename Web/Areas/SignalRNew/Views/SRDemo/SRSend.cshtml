@@ -11,7 +11,7 @@
 </head>
 <body>
     <div>
-        <h2>多人同时即时通讯（聊天室）</h2>
+        <h2>多人同时即时通讯（初门超级简单版）</h2>
     </div>
 
     <div>
@@ -22,25 +22,28 @@
             <ul id="discussion"></ul>
         </div>
     </div>
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
     <script src="~/Scripts/jquery.signalR-2.2.1.js"></script>
-    <script src="~/signalr/hubs"></script> @*这个东西是 Startup加入 app.MapSignalR();才会出来的*@
+    @*这个东西是 Startup加入 app.MapSignalR();才会出来的*@
+    <script src="~/signalr/hubs"></script>
     <script>
         $(function () {
-            //chatHub这个名子很坑，自己写的基本都挂了，好像还有大小写之分。
+            //chatHub这个名子很坑，自己写的基本都挂了，开不不明白有大小写之分。
+            //后来才知道Hub的开头字母一定要为小写。
             var chat = $.connection.chatHub;
             //hello 这个是ChatHub里的一个方法 用$.connection.chatHub读出来的，命名空间随便写。
-            chat.client.hello = function (name, message) {
+            //这个方法是返回方法
+            chat.client.helloBack = function (name, message) {
                 $('#discussion').append('<li><strong>' + name + '</strong>: ' + message + '</li>');
             };
-            $.connection.hub.start().done(function () {
-                $('#sendmessage').click(function () {
-                    chat.server.hello($('#displayname').val(), $('#message').val());
-                    $('#message').val('').focus();
-                });
+            //当相于开始主线程
+            $.connection.hub.start();
+            //提交开始一个server程序
+            $('#sendmessage').click(function () {
+                chat.server.hello($('#displayname').val(), $('#message').val());
+                $('#message').val('').focus();
             });
         });
-
     </script>
 </body>
 </html>

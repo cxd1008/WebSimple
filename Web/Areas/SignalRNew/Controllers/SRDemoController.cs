@@ -18,5 +18,10 @@ namespace Web.Areas.SignalRNew.Controllers
             return View();
         }
 
+        public ActionResult SRProgress()
+        {
+            return View();
+        }
+
     }
 }

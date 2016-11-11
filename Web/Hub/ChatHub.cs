@@ -11,7 +11,11 @@ namespace Web
     {
         public void Hello(string name, string message)
         {
-            Clients.All.hello(name, message);
+            Clients.All.helloBack(name, message);
+            
+            //Clients.Caller.hello(name, message);//只发给自己
+            //发送给某人
+            //Clients.Client("a").receivePrivateMessage("a", name, message);
         }
     }
 }

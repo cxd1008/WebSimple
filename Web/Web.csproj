@@ -214,6 +214,7 @@
     <Compile Include="Areas\Jiaoyu361\Controllers\IndexController.cs" />
     <Compile Include="Areas\Jiaoyu361\Jiaoyu361AreaRegistration.cs" />
     <Compile Include="Areas\SignalRNew\Controllers\SRDemoController.cs" />
+    <Compile Include="Hub\BookingHub.cs" />
     <Compile Include="Hub\ChatHub.cs" />
     <Compile Include="Areas\SignalRNew\SignalRNewAreaRegistration.cs" />
     <Compile Include="Areas\SYS\Controllers\SYS_DDController.cs" />
@@ -300,6 +301,7 @@
     <Content Include="Areas\CssJquery\JS\ProgressDemo.js" />
     <Content Include="Areas\CssJquery\JS\SnowDemo.js" />
     <Content Include="Areas\CssJquery\JS\StairDemo.js" />
+    <Content Include="Areas\SignalRNew\JS\SRProgress.js" />
     <Content Include="Areas\SignalRNew\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\SignalRNew\Views\_ViewStart.cshtml" />
     <Content Include="bootstrap\bootstrap-3.3.0-dist说明.txt" />
@@ -441,6 +443,7 @@
     <Content Include="Areas\CssJquery\Views\ProgressDemo\SignalRDemo.cshtml" />
     <Content Include="Areas\SignalRNew\Views\web.config" />
     <Content Include="Areas\SignalRNew\Views\SRDemo\SRSend.cshtml" />
+    <Content Include="Areas\SignalRNew\Views\SRDemo\SRProgress.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\CkeditorAndCkfinder\ckeditor\adapters\jquery.js" />
     <Content Include="Scripts\CkeditorAndCkfinder\ckeditor\build-config.js" />
