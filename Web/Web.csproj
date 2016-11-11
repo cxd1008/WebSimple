@@ -52,6 +52,14 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.1\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.2.1\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Owin, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.2.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
@@ -205,8 +213,9 @@
     <Compile Include="Areas\JF\JFAreaRegistration.cs" />
     <Compile Include="Areas\Jiaoyu361\Controllers\IndexController.cs" />
     <Compile Include="Areas\Jiaoyu361\Jiaoyu361AreaRegistration.cs" />
-    <Compile Include="Areas\SignalR\Controllers\SignalRController.cs" />
-    <Compile Include="Areas\SignalR\SignalRAreaRegistration.cs" />
+    <Compile Include="Areas\SignalRNew\Controllers\SRDemoController.cs" />
+    <Compile Include="Hub\ChatHub.cs" />
+    <Compile Include="Areas\SignalRNew\SignalRNewAreaRegistration.cs" />
     <Compile Include="Areas\SYS\Controllers\SYS_DDController.cs" />
     <Compile Include="Areas\SYS\SYSAreaRegistration.cs" />
     <Compile Include="Areas\CssJquery\Controllers\DivDemoController.cs" />
@@ -291,6 +300,8 @@
     <Content Include="Areas\CssJquery\JS\ProgressDemo.js" />
     <Content Include="Areas\CssJquery\JS\SnowDemo.js" />
     <Content Include="Areas\CssJquery\JS\StairDemo.js" />
+    <Content Include="Areas\SignalRNew\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\SignalRNew\Views\_ViewStart.cshtml" />
     <Content Include="bootstrap\bootstrap-3.3.0-dist说明.txt" />
     <Content Include="bootstrap\css\bootstrap-theme.css" />
     <Content Include="bootstrap\css\bootstrap-theme.min.css" />
@@ -428,10 +439,8 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Areas\CssJquery\Views\ProgressDemo\SignalRDemo.cshtml" />
-    <Content Include="Areas\SignalR\Views\web.config" />
-    <Content Include="Areas\SignalR\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\SignalR\Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\SignalR\Views\SignalR\SignalRDemo.cshtml" />
+    <Content Include="Areas\SignalRNew\Views\web.config" />
+    <Content Include="Areas\SignalRNew\Views\SRDemo\SRSend.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\CkeditorAndCkfinder\ckeditor\adapters\jquery.js" />
     <Content Include="Scripts\CkeditorAndCkfinder\ckeditor\build-config.js" />
@@ -1327,6 +1336,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.form.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.1.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.1.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
@@ -1400,10 +1411,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\CssJquery\Models\" />
     <Folder Include="Areas\EM\Models\" />
     <Folder Include="Areas\JF\Models\" />
     <Folder Include="Areas\Jiaoyu361\Models\" />
+    <Folder Include="Areas\SignalRNew\Models\" />
     <Folder Include="Areas\SYS\Models\" />
     <Folder Include="Areas\Test\Models\" />
     <Folder Include="Scripts\CkeditorAndCkfinder\ckfinder\userfiles\files\" />

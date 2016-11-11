@@ -1,22 +1,22 @@
 ﻿using System.Web.Mvc;
 
-namespace Web.Areas.SignalR
+namespace Web.Areas.SignalRNew
 {
-    public class SignalRAreaRegistration : AreaRegistration 
+    public class SignalRNewAreaRegistration : AreaRegistration 
     {
         public override string AreaName 
         {
             get 
             {
-                return "SignalR";
+                return "SignalRNew";
             }
         }
 
         public override void RegisterArea(AreaRegistrationContext context) 
         {
             context.MapRoute(
-                "SignalR_default",
-                "SignalR/{controller}/{action}/{id}",
+                "SignalRNew_default",
+                "SignalRNew/{controller}/{action}/{id}",
                 new { action = "Index", id = UrlParameter.Optional }
             );
         }

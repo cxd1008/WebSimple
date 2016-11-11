@@ -1,0 +1,46 @@
+﻿@{
+//Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <h2>多人同时即时通讯（聊天室）</h2>
+    </div>
+
+    <div>
+        <div class="container">
+            <input type="text" id="displayname" placeholder="输入您的名字" />
+            <input type="text" id="message" placeholder="输入您要发送的内容" />
+            <input type="button" id="sendmessage" value="发送" />
+            <ul id="discussion"></ul>
+        </div>
+    </div>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.signalR-2.2.1.js"></script>
+    <script src="~/signalr/hubs"></script> @*这个东西是 Startup加入 app.MapSignalR();才会出来的*@
+    <script>
+        $(function () {
+            //chatHub这个名子很坑，自己写的基本都挂了，好像还有大小写之分。
+            var chat = $.connection.chatHub;
+            //hello 这个是ChatHub里的一个方法 用$.connection.chatHub读出来的，命名空间随便写。
+            chat.client.hello = function (name, message) {
+                $('#discussion').append('<li><strong>' + name + '</strong>: ' + message + '</li>');
+            };
+            $.connection.hub.start().done(function () {
+                $('#sendmessage').click(function () {
+                    chat.server.hello($('#displayname').val(), $('#message').val());
+                    $('#message').val('').focus();
+                });
+            });
+        });
+
+    </script>
+</body>
+</html>
