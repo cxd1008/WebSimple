@@ -301,6 +301,7 @@
     <Content Include="Areas\CssJquery\JS\ProgressDemo.js" />
     <Content Include="Areas\CssJquery\JS\SnowDemo.js" />
     <Content Include="Areas\CssJquery\JS\StairDemo.js" />
+    <Content Include="Areas\SignalRNew\CSS\SRProgress.css" />
     <Content Include="Areas\SignalRNew\JS\SRProgress.js" />
     <Content Include="Areas\SignalRNew\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\SignalRNew\Views\_ViewStart.cshtml" />

@@ -10,14 +10,28 @@
     <title></title>
     <script src="~/Scripts/jquery.signalR-2.2.1.js"></script>
     <script src="~/signalr/hubs"></script>
-    <script src="~/Areas/SignalRNew/JS/SRProgress.js"></script>    
+    <script src="~/Areas/SignalRNew/JS/SRProgress.js"></script>
+    @*<script src="~/Scripts/jquery-progressbar.js"></script>
+        <link href="~/Areas/SignalRNew/CSS/SRProgress.css" rel="stylesheet" />*@
 </head>
 <body>
     <div>
         <h2>利用SignalR编写的即时进度</h2>
     </div>
     <div>
+        <div class="progress">
+            <div class="progress-bar" style="width:0%"></div>
+        </div>
+        <div class="progress">
+            <div class="progress-bar progress-bar-info" style="width:0%"></div>
+        </div>
+        <div class="progress">
+            <div class="progress-bar progress-bar-success" style="width:0%"></div>
+        </div>
+
+
         <label id="lbCount">0</label>
+       
         <input type="button" id="btCount" value="点击触发进度" onclick="" />
     </div>
 </body>
