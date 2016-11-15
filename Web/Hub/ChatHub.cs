@@ -3,19 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Microsoft.AspNet.SignalR;
-
-//namespace Web.Areas.SignalRNew.Cs
 namespace Web
 {
     public class ChatHub : Hub
-    {
+    {       
+        /// 群聊      
         public void Hello(string name, string message)
         {
             Clients.All.helloBack(name, message);
-            
-            //Clients.Caller.hello(name, message);//只发给自己
-            //发送给某人
-            //Clients.Client("a").receivePrivateMessage("a", name, message);
+        }        
+        /// 单聊       
+        public void HelloSingle(string sid, string name, string message)
+        {
+            Clients.Caller.helloSingleBack(sid,name, message);//自己也收到一份消息            
+            Clients.Client(sid).helloSingleBack(sid,name, message);//发送给某人
+        }
+        //得到当前用户ID
+        public void GetUserID(string sid)
+        {
+            Clients.Caller.GetUserIDBack(Context.ConnectionId);
         }
     }
 }
