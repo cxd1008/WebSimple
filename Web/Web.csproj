@@ -303,6 +303,7 @@
     <Content Include="Areas\CssJquery\JS\StairDemo.js" />
     <Content Include="Areas\SignalRNew\CSS\SRProgress.css" />
     <Content Include="Areas\SignalRNew\JS\SRProgress.js" />
+    <Content Include="Areas\SignalRNew\JS\SRSend.js" />
     <Content Include="Areas\SignalRNew\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\SignalRNew\Views\_ViewStart.cshtml" />
     <Content Include="bootstrap\bootstrap-3.3.0-dist说明.txt" />

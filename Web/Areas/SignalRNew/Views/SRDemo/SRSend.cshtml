@@ -11,8 +11,12 @@
 </head>
 <body>
     <div>
-        <h2>多人同时即时通讯（初门超级简单版）</h2>
-        <h2>加入HelloSingle单聊功能</h2>
+        <h2>多人同时即时通讯（入门版）</h2>
+        <h4>加入HelloSingle单聊功能</h4>
+        <h4>加入sendgroup组聊功能</h4>
+        <h5>提示：</h5>
+        <h5>单聊需要输入对方的ID</h5>
+        <h5>组聊需要加入一个组</h5>
     </div>
 
     <div>
@@ -20,12 +24,17 @@
             您当前的唯一ID：
             <input type="text" id="sid" style="width:300px" placeholder="您当前的唯一ID" />
             <br />
-            <input type="text" id="displayname" placeholder="输入您的名字" />
-            <input type="text" id="message" placeholder="输入您要发送的内容" />
+            名字：<input type="text" id="displayname" placeholder="输入您的名字" />
+            <br />
+            内容：<input type="text" id="message" placeholder="输入您要发送的内容" />
             <input type="button" id="sendALL" value="全体发送" />
             <br />
-            <input type="text" id="pid" style="width:300px" placeholder="您要私聊的ID" />
+            私聊：<input type="text" id="pid" style="width:300px" placeholder="您要私聊的ID" />
             <input type="button" id="sendSingle" value="私人发送" />
+            <br />
+            组聊：<input type="text" id="groupname" placeholder="您要加入的组名" />
+            <input type="button" id="addgroup" value="加入该组" />
+            <input type="button" id="sendgroup" value="群组发送" />
             <ul id="discussion"></ul>
         </div>
     </div>
@@ -33,37 +42,6 @@
     <script src="~/Scripts/jquery.signalR-2.2.1.js"></script>
     @*这个东西是 Startup加入 app.MapSignalR();才会出来的*@
     <script src="~/signalr/hubs"></script>
-    <script>
-        $(function () {
-            //chatHub这个名子很坑，自己写的基本都挂了，开不不明白有大小写之分。后来才知道Hub的开头字母一定要为小写。
-            var chat = $.connection.chatHub;
-            //hello 这个是ChatHub里的一个方法 用$.connection.chatHub读出来的，命名空间随便写。
-            chat.client.helloBack = function (name, message) {
-                $('#discussion').append('<li><strong>' + name + '</strong>: ' + message + '</li>');
-            };
-            //单聊
-            chat.client.helloSingleBack = function (sid, name, message) {
-                $('#discussion').append('<li><strong>' + name + '</strong>私聊: ' + message + '</li>');
-            };
-            //返回取得用户ID
-            chat.client.getUserIDBack = function (sid) {
-                $("#sid").val(sid);
-            };
-            //当相于开始主线程
-            $.connection.hub.start().done(function () {
-                chat.server.getUserID("a");//取得当前用户唯一ID
-            });
-            //提交开始一个server程序 群聊
-            $('#sendALL').click(function () {
-                chat.server.hello($('#displayname').val(), $('#message').val());
-                $('#message').val('').focus();
-            });
-            //单聊
-            $('#sendSingle').click(function () {
-                chat.server.helloSingle($("#pid").val(), $('#displayname').val(), $('#message').val());
-                $('#message').val('').focus();
-            });
-        });
-    </script>
+    <script src="~/Areas/SignalRNew/JS/SRSend.js"></script>
 </body>
 </html>
