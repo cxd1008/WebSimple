@@ -22,7 +22,8 @@ $(function () {
     };
     //当相于开始主线程
     $.connection.hub.start().done(function () {
-        chat.server.getUserID("a");//取得当前用户唯一ID
+        //chat.server.getUserID("a");//取得当前用户唯一ID
+        //可以使用public override Task OnConnected() 代替
     });
     //提交开始一个server程序 群聊
     $('#sendALL').click(function () {
