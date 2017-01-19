@@ -17,22 +17,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("主页", "Index", "../Home")</li>
-                    <li>@Html.ActionLink("进度演示", "ProgressDemo", "ProgressDemo")</li>
-                    <li>@Html.ActionLink("即时通讯", "SignalRDemo", "ProgressDemo", new { }, new { target = "_blank" })</li>
-                    <li>@Html.ActionLink("基础", "CssDemo", "ProgressDemo")</li>
-                    <li>@Html.ActionLink("网站", "WebDemo", "DivDemo", new { }, new { target = "_blank" })</li>
-                    <li>@Html.ActionLink("网站BootStrap", "WebDemoBoot", "DivDemo", new { }, new { target = "_blank" })</li>
-                    <li>@Html.ActionLink("下雪", "SnowDemo", "DivDemo")</li>
-                    <li>@Html.ActionLink("无缝轮播", "LunBoDemo", "DivDemo")</li>
-                    <li>@Html.ActionLink("手风琴", "AccordionDemo", "DivDemo")</li>
-                    <li>@Html.ActionLink("JD沸腾国庆", "JDFTGQ", "DivDemo")</li>
-                    <li>@Html.ActionLink("JD菜单", "JDIndex", "DivDemo", new { }, new { target = "_blank" })</li>
-                    <li>@Html.ActionLink("楼梯滚屏", "StairDemo", "DivDemo")</li>
-                    <li>@Html.ActionLink("Table", "TableDemo", "DivDemo")</li>                                   
+                    <li>@Html.ActionLink("JS对象和数组", "JSObjArray", "JS")</li>     
                 </ul>
             </div>
         </div>
@@ -46,7 +36,7 @@
         </footer>
     </div>
 
-
+    @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
