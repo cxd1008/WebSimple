@@ -22,13 +22,16 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("主页", "Index", "../Home")</li>
-                    <li>@Html.ActionLink("JS对象和数组", "JSObjArray", "JS")</li>     
+                    <li>@Html.ActionLink("JS对象和数组", "JSObjArray", "JS")</li>
+                    <li>@Html.ActionLink("JS字符串", "JSstring", "JS")</li>
+                    <li>@Html.ActionLink("JS-Math用法", "JSMath", "JS")</li>
+                    <li>@Html.ActionLink("JS匿名函数和闭包", "JSCloseBag", "JS")</li>
                 </ul>
             </div>
         </div>
     </div>
 
-    <div class="container body-content">
+    <div class="container body-content" style="margin-top:40px">
         @RenderBody()
         <hr />
         <footer>

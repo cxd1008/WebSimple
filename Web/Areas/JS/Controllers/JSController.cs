@@ -8,6 +8,19 @@ namespace Web.Areas.JS.Controllers
         {
             return View();
         }
+        public ActionResult JSstring()
+        {
+            return View();
+        }
+        public ActionResult JSMath()
+        {
+            return View();
+        }
+        public ActionResult JSCloseBag()
+        {
+            return View();
+        }
+        
 
     }
 }
