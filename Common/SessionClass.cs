@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Web;
-using System.Threading.Tasks;
+﻿using System.Web;
 using Model;
-using System.Web.Mvc;
 namespace Common
 {
     public static class SessionClass

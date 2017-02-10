@@ -67,5 +67,9 @@ namespace Web.Areas.CssJquery.Controllers
             return View();
         }
 
+        public ActionResult JqueryValidate()
+        {
+            return View();
+        }
     }
 }

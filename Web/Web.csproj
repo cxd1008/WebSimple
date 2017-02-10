@@ -254,6 +254,8 @@
     <Content Include="Areas\CssJquery\Img\WebDemo\logo.jpg" />
     <Content Include="Areas\CssJquery\Img\WebDemo\一次就好.mp3" />
     <Content Include="Areas\CssJquery\JS\JDIndex.js" />
+    <Content Include="Areas\CssJquery\JS\jquery.validate.min.js" />
+    <Content Include="Areas\CssJquery\JS\messages_zh.js" />
     <Content Include="Areas\JS\JS\JSCloseBag.js" />
     <Content Include="Areas\JS\JS\JSMath.js" />
     <Content Include="Areas\JS\JS\JSObjArray.js" />
@@ -459,6 +461,7 @@
     <Content Include="Areas\JS\Views\JS\JSstring.cshtml" />
     <Content Include="Areas\JS\Views\JS\JSMath.cshtml" />
     <Content Include="Areas\JS\Views\JS\JSCloseBag.cshtml" />
+    <Content Include="Areas\CssJquery\Views\DivDemo\JqueryValidate.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\CkeditorAndCkfinder\ckeditor\adapters\jquery.js" />
     <Content Include="Scripts\CkeditorAndCkfinder\ckeditor\build-config.js" />

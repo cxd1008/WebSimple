@@ -19,7 +19,7 @@ function Math3() {
     alert(Math.round(25.5));
     alert(Math.round(25.1));
 }
-
+//从多少到多少的随机数
 function Math4(start, end) {
     var total = end - start + 1;
     $("#math4").val(Math.floor(Math.random() * total + start));

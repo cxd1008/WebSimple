@@ -1,0 +1,35 @@
+﻿@{
+    //Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <script src="~/Areas/CssJquery/JS/jquery.validate.min.js"></script>
+    <script src="~/Areas/CssJquery/JS/messages_zh.js"></script>
+    <script>
+        $(function () {
+            $("form").validate();
+        })
+    </script>
+</head>
+<body>
+    <div>
+        <form action="123.html">
+            <p>用 户 名：<input type="text" name="user" class="required" minlength="2"  /></p>
+            <p>电子邮件：<input type="text" name="email" class="required email"/></p>
+            <p>网　　址：<input type="text" name="url" class="url" /></p>
+            <p>数字：<input  type="number"  name="number" class="number" range="20,30" /></p>
+            <p>数字：<input id="num1" type="number" class="number" max="50" min="30" /></p>
+            <p>与上面的数字相同：<input type="number" name="equalTo"  equalTo="#num1" /></p>
+            <p>H5日期：<input type="date" name="date" class="date" /></p>
+            <p>日期：<input type="text" name="dateISO" class="dateISO" /></p>
+            需要有name的值.要不会对应不上
+            <p><input type="submit" value="提交" /></p>
+        </form>
+    </div>
+</body>
+</html>
