@@ -24,7 +24,7 @@ namespace Web.Areas.JF.Controllers
         /// </summary>
         WebMvcEntities db = (WebMvcEntities)DbContextFactory.GetCurrentDbContext();
 
-        public int funp( int i,string a)
+        public int funp(int i, string a)
         {
             return 1;
         }
@@ -37,8 +37,10 @@ namespace Web.Areas.JF.Controllers
             //int i = 
             //func.BeginInvoke(1, "a",null,null);
 
-            var TasksPL = from ta in db.JF_Tasks select ta;
-
+            var TasksPL = db.JF_Tasks.AsQueryable();
+            //var TasksPL2 = db.JF_Tasks.AsEnumerable();
+            //var TasksPL = from ta in db.JF_Tasks select ta;
+            //var TasksPL4 = db.JF_Tasks.ToList();
             if (h1 != "1")
             {
                 sTime = DateTime.Now.Year + "-" + DateTime.Now.Month + "-1";
@@ -133,7 +135,7 @@ namespace Web.Areas.JF.Controllers
             db.SaveChanges();
         }
         [IsLogin]
-       
+
         // GET: /Tasks/JF_Tasks/Edit/5
         public async Task<ActionResult> Edit(Guid? id)
         {

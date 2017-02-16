@@ -204,6 +204,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\CssJquery\Controllers\JF_TasksController.cs" />
     <Compile Include="Areas\CssJquery\CssJqueryAreaRegistration.cs" />
     <Compile Include="Areas\EM\Controllers\EM_EmployeeController.cs" />
     <Compile Include="Areas\EM\EMAreaRegistration.cs" />
