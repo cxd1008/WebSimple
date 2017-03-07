@@ -17,6 +17,7 @@ namespace Web.Areas.JF
             context.MapRoute(
                 "JF_default",
                 "JF/{controller}/{action}/{id}",
+                //"{controller}/{action}/{id}",
                 new { action = "Index", id = UrlParameter.Optional }
             );
         }

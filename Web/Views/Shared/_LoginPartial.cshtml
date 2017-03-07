@@ -21,8 +21,9 @@
 else
 {
     <ul class="nav navbar-nav navbar-right">
-
-        <li>@Html.ActionLink("注册", "Create", "EM/EM_Employee/Create")</li>
-        <li>@Html.ActionLink("登录", "Login", "Account")</li>
+        <li><a href="~/EM/EM_Employee/Create">注册</a></li>
+        @*<li>@Html.ActionLink("注册", "Create", "EM/EM_Employee/Create")</li>*@
+        <li><a href="~/Account/Login">登录</a></li>
+        <li>@*@Html.ActionLink("登录", "Login", "Account")*@</li>
     </ul>
 }
